@@ -8,7 +8,18 @@ class Home extends CI_Controller {
 	}
 
     public function menu(){
-        $this->load->view('menu');
+        $sql = "SELECT * FROM menufamily";
+        $menuFamily = $this->db->query($sql);
+        $menuFamily = $menuFamily->result_array();
+        $menus = array();
+        foreach($menuFamily as $mf){
+             $menuFamilyId = $mf['id'];
+             $sqlMenu = "SELECT * FROM menu where menuFamilyid = '".$menuFamilyId."' and flg = 1";
+             $menu = $this->db->query($sqlMenu);
+             $menus[$mf['menuName']] = $menu->result();
+        }
+        $data = array('menu'=>$menus);
+        $this->load->view('menu',$data);
     }
 
     public function contact(){

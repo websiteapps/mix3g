@@ -130,23 +130,4 @@ class Contact extends CI_Model {
     {
         return $this->zip;
     }
-
-    public function addContact($contact){
-        log_message('info','in AddContact');
-        $data = array(
-            'id'=>$contact->getId(),
-            'contactName'=>$contact->getContactName(),
-            'email'=>$contact->getEmail(),
-            'phoneNumber'=>$contact->getPhoneNumber(),
-            'phoneNumber1'=>$contact->getPhoneNumber1(),
-            'phoneNumber2'=>$contact->getPhoneNumber2(),
-            'fax'=>$contact->getFax(),
-            'street'=>$contact->getStreet(),
-            'state'=>$contact->getState(),
-            'city'=>$contact->getCity(),
-            'zip'=>$contact->getZip()
-        );
-        $this->db->insert("contact",$data);
-        log_message("info", "Contact Info Added to Database");
-    }
 }

@@ -24,13 +24,22 @@ class admin extends CI_Controller {
         $contact->addContact($contact);
     }
 
-    public function read(){
-        $sql = "SELECT * FROM contact Order by id desc";
-        $query = $this->db->query($sql);
+    public function addMenuFamily(){
+        $menuFamily = new MenuFamily();
+        $menuFamily->setMenuName("Sandwiches");
 
-        foreach($query->result() as $value){
-            echo $value->id;
-            echo "<br>";
-        }
+        $utility = new Utilities();
+        $utility->addMenuFamily($menuFamily);
+    }
+
+    public function addMenu(){
+        $menu = new Menu();
+        $menu->setMenuName("Mexican Sandwicthe");
+      //$menu->setMenuFamilyId("f1367393223");
+      //$menu->setMenuFamilyId("f1367400990");
+        $menu->setMenuFamilyId("f1367406237");
+
+        $utility = new Utilities();
+        $utility->addMenu($menu);
     }
 }

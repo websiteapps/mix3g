@@ -9,15 +9,29 @@
 
 class Menu {
     private $id;
+    private $menuFamilyId;
     private $menuName;
     private $menuPrice;
     private $flg;
 
-    public function __construct($menuName)
+    public function __construct()
     {
-        $this->menuName = $menuName;
         $this->menuPrice = 0;
+        $this->generateId();
         $this->flg = 1;
+    }
+
+    public function generateId(){
+        $this->id = "m".time();
+    }
+    public function setMenuFamilyId($menuFamilyId)
+    {
+        $this->menuFamilyId = $menuFamilyId;
+    }
+
+    public function getMenuFamilyId()
+    {
+        return $this->menuFamilyId;
     }
 
     public function setFlg($flg)

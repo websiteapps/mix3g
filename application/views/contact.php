@@ -31,12 +31,12 @@
                 	<h1><a href="index.html">Catering<span>.com</span></a></h1>
                     <nav>
                         <ul class="menu">
-                            <li><a href="index.html">About</a></li>
-                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="<?php echo site_url()?>">Home</a></li>
+                            <li><a href="<?php echo site_url('home/menu')?>">Menu</a></li>
                             <li><a href="catalogue.html">Catalogue </a></li>
                             <li><a href="shipping.html">Shipping</a></li>
                             <li><a href="faq.html">FAQ </a></li>
-                            <li><a class="active" href="contact.html">Contact</a></li>
+                            <li><a class="active" href="<?php echo site_url('home/contact')?>">Contact</a></li>
                         </ul>
                     </nav>
                 </div>

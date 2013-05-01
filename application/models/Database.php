@@ -13,7 +13,65 @@ class Database extends CI_Model {
     function __construct(){
         $this->load->dbforge();
     }
-    public function createContactTable($tableName){
+
+    public function createFamilyTable(){
+        $fields = array(
+            'id' => array(
+                'type' => 'varchar',
+                'constraint' => 50,
+            ),
+            'menuName' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ),
+            'flg' => array(
+                'type' => 'int',
+                'constraint' => '1',
+            ),
+        );
+        $this->dbforge->add_field($fields);
+        if($this->dbforge->create_table("menuFamily", TRUE)){
+            log_message('info','FamilyMenu Table Created');
+            echo "FamilyMenu Table Created";
+        }else{
+            log_message('error','Application = Fail to Create FamilyMenu Table');
+            echo "Fail to Create FamilyMenu Table";
+        }
+    }
+
+    public function createMenuTable(){
+        $fields = array(
+            'id' => array(
+                'type' => 'varchar',
+                'constraint' => 50,
+            ),
+            'menuName' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ),
+            'menuPrice' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ),
+            'menuFamilyId' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '50',
+            ),
+            'flg' => array(
+                'type' => 'int',
+                'constraint' => '1',
+            ),
+        );
+        $this->dbforge->add_field($fields);
+        if($this->dbforge->create_table("menu", TRUE)){
+            log_message('info','Menu Table Created');
+            echo "Menu Table Created";
+        }else{
+            log_message('error','Application = Fail to Create Menu Table');
+            echo "Fail to Create Menu Table";
+        }
+    }
+    public function createContactTable(){
         $fields = array(
             'id' => array(
                 'type' => 'varchar',
@@ -61,10 +119,12 @@ class Database extends CI_Model {
             ),
         );
         $this->dbforge->add_field($fields);
-        if($this->dbforge->create_table($tableName, TRUE)){
-            log_message('info','Table Created');
+        if($this->dbforge->create_table("contact", TRUE)){
+            log_message('info','Contact Table Created');
+            echo "Contact Table Created";
         }else{
-            log_message('error','Application = Fail to Create Table');
+            log_message('error','Application = Fail to Contact Create Table');
+            echo "Fail to Create Contact Table";
         }
     }
 }
