@@ -70,13 +70,13 @@
           </a>
         </li>
 		<li>
-          <a href="#">
+          <a href="people.html">
             <span class="icon32 user"></span>
             People
           </a>
         </li>
 		<li>
-          <a href="#">
+          <a href="contact.html">
             <span class="icon32 new"></span>
             Contact
           </a>
@@ -173,6 +173,9 @@
 									<p>
 										<input type="text" id="menuName" placeholder="Menu Name" name="menuName"/>
 									</p>
+									<p>
+										<input type="text" id="menuPrice" placeholder="Menu Price" name="menuPrice" value="0"/>
+									</p>
 									<input type="submit" class="button blue" value="Add" />
 								</form>
 							</div>
@@ -220,19 +223,39 @@
            </div>
 
             <div class="tab-content" id="two">
-				<div class="column-left">
-					<div style="padding:10px 10px 10px 10px;">
-						<form action="/" method="post">
-							<p>
-							<input type="text" id="menuFamilyName" placeholder="Menu Family Name" name="menuFamilyName"/>
-							</p>
-							<input type="submit" class="button blue" value="Add" />
-						</form>
+				<div style="padding-left:15px;padding-right:15px;">
+					<div class="column-left">
+						<div class="box">
+							<div class="box-header">
+								<span class="icon16 cog"></span><h1>Add Best Menu</h1>
+							</div>
+							<div style="padding:10px 10px 10px 10px;">
+								<form action="/" method="post">
+									<p>
+										<input type="text" id="menuFamilyName" placeholder="Menu Family Name" name="menuFamilyName"/>
+									</p>
+									<p>
+										<input type="file" id="bestMenuPicture" name="bestMenuPicture" placeholder="Picture" />
+									</p>
+									<input type="submit" class="button blue" value="Add" />
+								</form>
+							</div>
+						</div>
 					</div>
+					<div class="column-right">
+						<div class="box">
+							<div class="box-header">
+								<span class="icon16 cog"></span><h1>Delete Best Menu</h1>
+							</div>
+							<div style="padding:10px 10px 10px 10px;">
+								<form action="/" method="post">
+									
+								</form>
+							</div>
+						</div>
+					</div>
+					 <div class="clear"></div>
 				</div>
-				<div class="column-right">
-				</div>
-				 <div class="clear"></div>
             </div>
 
             <div class="tab-content" id="three">
@@ -240,7 +263,10 @@
 					<div style="padding:10px 10px 10px 10px;">
 						<form action="/" method="post">
 							<p>
-							<input type="text" id="menuFamilyName" placeholder="Menu Family Name" name="menuFamilyName"/>
+								<input type="text" id="specialMenuName" placeholder="Special Menu Name" name="specialMenuName"/>
+							</p>
+							<p>
+								<input type="file" id="specialMenuPicture" name="specialMenuPicture" placeholder="Picture" />
 							</p>
 							<input type="submit" class="button blue" value="Add" />
 						</form>
