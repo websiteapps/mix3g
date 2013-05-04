@@ -28,6 +28,10 @@ class Home extends CI_Controller {
         $data = $data->result();
         $this->load->view('contact', $data[0]);
     }
+
+    public function login(){
+        $this->load->view('admin/login');
+    }
 }
 
 /* End of file home.php */

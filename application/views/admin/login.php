@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Paper Stack</title>
+<title>Mix3g Admin Login</title>
 <style>
 /* Reset CSS */
 html, body, div, span, applet, object, iframe,
@@ -272,16 +272,17 @@ form:after {
 		<form action="">
 			<h1>Admin Login</h1>
 			<div>
-				<input type="text" placeholder="Username" required="" id="username" />
+				<input type="text" placeholder="Username" required="" id="username" name="username" />
 			</div>
 			<div>
-				<input type="password" placeholder="Password" required="" id="password" />
+				<input type="password" placeholder="Password" required="" id="password" name="password" />
 			</div>
 			<div>
 				<input type="submit" value="Log in" />
 			</div>
 		</form><!-- form -->
 		<div class="button">
+            <h6>Developed by WebsiteApps <br> www.websiteapps.in</h6>
 		</div><!-- button -->
 	</section><!-- content -->
 </div><!-- container -->

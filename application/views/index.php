@@ -41,6 +41,7 @@
                             <li><a href="shipping.html">Shipping</a></li>
                             <li><a href="faq.html">FAQ </a></li>
                             <li><a href="<?php echo site_url("home/contact")?>">Contact</a></li>
+                            <li><a href="<?php echo site_url("home/login")?>">Login</a></li>
                         </ul>
                     </nav>
                 </div>
