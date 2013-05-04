@@ -35,7 +35,7 @@
                 	<h1><a href="<?php echo base_url()?>">Vidhata's <span>Mix 3G</span></a></h1>
                     <nav>
                         <ul class="menu">
-                            <li><a class="active" href="index.html">Home</a></li>
+                            <li><a class="active" href="home/index">Home</a></li>
                             <li><a href="<?php echo site_url("home/menu")?>">Menu</a></li>
                             <li><a href="catalogue.html">Catalogue </a></li>
                             <li><a href="shipping.html">Shipping</a></li>
