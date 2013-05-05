@@ -45,6 +45,8 @@ class Utilities extends CI_Model {
             'menuName'=>$menu->getMenuName(),
             'menuPrice'=>$menu->getMenuPrice(),
             'menuFamilyId'=>$menu->getMenuFamilyId(),
+            'menuType'=>$menu->getMenuType(),
+            'img'=>$menu->getImg(),
             'flg'=>$menu->getFlg()
         );
         $this->db->insert("menu",$data);

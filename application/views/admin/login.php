@@ -269,7 +269,7 @@ form:after {
 <body>
 <div class="container">
 	<section id="content">
-		<form action="">
+        <?php echo form_open(site_url("adminPanel/loginVerify")); ?>
 			<h1>Admin Login</h1>
 			<div>
 				<input type="text" placeholder="Username" required="" id="username" name="username" />
@@ -280,7 +280,7 @@ form:after {
 			<div>
 				<input type="submit" value="Log in" />
 			</div>
-		</form><!-- form -->
+		<?php echo form_close(); ?>
 		<div class="button">
             <h6>Developed by WebsiteApps <br> www.websiteapps.in</h6>
 		</div><!-- button -->

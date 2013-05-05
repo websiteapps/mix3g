@@ -82,157 +82,31 @@
                         </div>
                         <h3 class="p1">Our Best Menus</h3>
                             <div id="slider">
-                            <div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img2.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img5.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <figure><a href="#"><img src="<?php echo asset_url("images/page2-img8.jpg")?>" alt=""></a></figure>
-                                <h5>Nam liber tempor</h5>
-                                (price $12.95)
+                                <?php
+                                $cnt = 0;
+                                foreach($bestMenu as $parent=>$child){
+                                    if($cnt == 0){
+                                        echo "<div>";
+                                    }
+                                    $cnt++;
+                                    if($cnt == 1 || $cnt == 2){
+                                        echo "<div class='p2'>";
+                                        echo "<figure><a><img width='150' height='100' src=" . img_url($child->img) ." alt=''></a></figure>";
+                                        echo "<h5>" . $child->menuName . "</h5>";
+                                        echo $child->menuPrice;
+                                        echo "</div>";
+                                    }else{
+                                        echo "<figure><a><img width='150' height='100' src=" . img_url($child->img) ." alt=''></a></figure>";
+                                        echo "<h5>" . $child->menuName . "</h5>";
+                                        echo $child->menuPrice;
+                                    }
+                                    if($cnt == 3){
+                                        echo "</div>";
+                                        $cnt = 0;
+                                    }
+                                }
+                                ?>
                             </div>
-                            <div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img3.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img6.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <figure><a href="#"><img src="<?php echo asset_url("images/page2-img9.jpg")?>" alt=""></a></figure>
-                                <h5>Nam liber tempor</h5>
-                                (price $12.95)
-                            </div>
-                            <div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img4.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img7.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <figure><a href="#"><img src="<?php echo asset_url("images/page2-img10.jpg")?>" alt=""></a></figure>
-                                <h5>Nam liber tempor</h5>
-                                (price $12.95)
-                            </div>
-                            <div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img2.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img5.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <figure><a href="#"><img src="<?php echo asset_url("images/page2-img8.jpg")?>" alt=""></a></figure>
-                                <h5>Nam liber tempor</h5>
-                                (price $12.95)
-                            </div>
-                            <div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img3.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img6.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <figure><a href="#"><img src="<?php echo asset_url("images/page2-img9.jpg")?>" alt=""></a></figure>
-                                <h5>Nam liber tempor</h5>
-                                (price $12.95)
-                            </div>
-                            <div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img4.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img7.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <figure><a href="#"><img src="<?php echo asset_url("images/page2-img10.jpg")?>" alt=""></a></figure>
-                                <h5>Nam liber tempor</h5>
-                                (price $12.95)
-                            </div>
-                            <div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img2.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img5.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <figure><a href="#"><img src="<?php echo asset_url("images/page2-img8.jpg")?>" alt=""></a></figure>
-                                <h5>Nam liber tempor</h5>
-                                (price $12.95)
-                            </div>
-                            <div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img3.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img6.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <figure><a href="#"><img src="<?php echo asset_url("images/page2-img9.jpg")?>" alt=""></a></figure>
-                                <h5>Nam liber tempor</h5>
-                                (price $12.95)
-                            </div>
-                            <div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img4.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img7.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <figure><a href="#"><img src="<?php echo asset_url("images/page2-img10.jpg")?>" alt=""></a></figure>
-                                <h5>Nam liber tempor</h5>
-                                (price $12.95)
-                            </div>
-                            <div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img4.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <div class="p2">
-                                	<figure><a href="#"><img src="<?php echo asset_url("images/page2-img7.jpg")?>" alt=""></a></figure>
-                                    <h5>Nam liber tempor</h5>
-                                    (price $12.95)
-                                </div>
-                                <figure><a href="#"><img src="<?php echo asset_url("images/page2-img10.jpg")?>" alt=""></a></figure>
-                                <h5>Nam liber tempor</h5>
-                                (price $12.95)
-                            </div>
-                        </div>
                     </div>
                 </article>
                 <article class="col-2">

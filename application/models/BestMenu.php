@@ -8,19 +8,36 @@
  */
 
 class BestMenu {
-    private $imgId;
+    private $id;
     private $menuName;
     private $menuPrice;
+    private $img;
     private $flg;
 
-    function __construct($menuName)
+    function __construct()
     {
-        $this->menuName = $menuName;
-        $this->setId($menuName); //Creating Unique id with Unix TimeStamp For ImageName
+        $this->generateId(); //Creating Unique id with Unix TimeStamp
+        $this->generateImgPath();
         $this->menuPrice = 0;
         $this->flg = 1;
     }
 
+    private function generateId(){
+        $this->id = "b".time();
+    }
+
+    private function generateImgPath(){
+        $this->img = "bestMenu_" . $this->id . ".jpg";
+    }
+    public function setImg($img)
+    {
+        $this->img = $img;
+    }
+
+    public function getImg()
+    {
+        return $this->img;
+    }
 
     public function setFlg($flg)
     {
@@ -34,8 +51,7 @@ class BestMenu {
 
     private function setId($id)
     {
-        $unixTimeStamp = time();
-        $this->id = $unixTimeStamp . $id;
+        $this->id = $id;
     }
 
     public function getId()

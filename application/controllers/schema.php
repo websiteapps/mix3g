@@ -8,6 +8,11 @@
  */
 
 class schema extends CI_Controller {
+
+    public function createLogin(){
+        $database = new Database();
+        $database->createLoginTable();
+    }
     public function createContact(){
         $database = new Database();
         $database->createContactTable();

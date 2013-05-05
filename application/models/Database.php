@@ -14,6 +14,30 @@ class Database extends CI_Model {
         $this->load->dbforge();
     }
 
+    public function createLoginTable(){
+        $fields = array(
+            'id' => array(
+                'type' => 'varchar',
+                'constraint' => 50,
+            ),
+            'username' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ),
+            'password' => array(
+                'type' => 'varchar',
+                'constraint' => '100',
+            ),
+        );
+        $this->dbforge->add_field($fields);
+        if($this->dbforge->create_table("login", TRUE)){
+            log_message('info','login Table Created');
+            echo "login Table Created";
+        }else{
+            log_message('error','Application = Fail to Create FamilyMenu Table');
+            echo "Fail to Create FamilyMenu Table";
+        }
+    }
     public function createFamilyTable(){
         $fields = array(
             'id' => array(
@@ -56,6 +80,14 @@ class Database extends CI_Model {
             'menuFamilyId' => array(
                 'type' => 'VARCHAR',
                 'constraint' => '50',
+            ),
+            'menuType' => array(
+                'type' => 'varchar',
+                'constraint' => '50',
+            ),
+            'img' => array(
+                'type' => 'varchar',
+                'constraint' => '100',
             ),
             'flg' => array(
                 'type' => 'int',

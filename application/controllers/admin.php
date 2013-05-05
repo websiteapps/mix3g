@@ -26,20 +26,50 @@ class admin extends CI_Controller {
 
     public function addMenuFamily(){
         $menuFamily = new MenuFamily();
-        $menuFamily->setMenuName("Sandwiches");
-
+        $menuFamily->setMenuName($this->input->post("menuFamilyName"));
         $utility = new Utilities();
         $utility->addMenuFamily($menuFamily);
+        redirect('adminPanel/menu', 'refresh');
     }
 
+    public function deleteMenuFamily(){
+        $menuId = $this->input->post("deleteMenuFamilyType");
+        $sql = "DELETE FROM menufamily WHERE id = '".$menuId."'";
+        $this->db->query($sql);
+        redirect('adminPanel/menu', 'refresh');
+    }
     public function addMenu(){
         $menu = new Menu();
-        $menu->setMenuName("Mexican Sandwicthe");
-      //$menu->setMenuFamilyId("f1367393223");
-      //$menu->setMenuFamilyId("f1367400990");
-        $menu->setMenuFamilyId("f1367406237");
+        $menu->setMenuType($this->input->post("menuType"));
+        $menu->setMenuFamilyId($this->input->post("menuFamilyType"));
+        $menu->setMenuName($this->input->post("menuName"));
+        $menu->setMenuPrice($this->input->post("menuPrice"));
 
-        $utility = new Utilities();
-        $utility->addMenu($menu);
+        if(strcmp($this->input->post('menuType'),"REGULAR_MENU")  != 0){
+            $config['upload_path'] = './uploads/';
+            $config['allowed_types'] = 'jpg';
+            $config['max_size']	= '1000';
+            $config['max_width']  = '1024';
+            $config['max_height']  = '768';
+            $config['file_name'] = $menu->getImg();
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload("menuPicture")){
+                log_message("info","BestMenu image uploaded". $menu->getImg());
+                $utility = new Utilities();
+                $utility->addMenu($menu);
+                redirect('adminPanel/menu', 'refresh');
+            }else{
+                log_message("info","Fail to Upload Best Menu Image". $menu->getImg());
+                echo $this->upload->display_errors();
+            }
+        }
+        else{
+            $menu->setImg("");
+            $utility = new Utilities();
+            $utility->addMenu($menu);
+            redirect('adminPanel/menu', 'refresh');
+        }
+
     }
 }

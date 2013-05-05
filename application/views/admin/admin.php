@@ -1,56 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="viewport" content="width=1024px, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    
-    <title>Spina</title>
+    <title>Mix3g Administrator Panel</title>
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/icons.css" />
-    <link rel="stylesheet" href="css/formalize.css" />
-    <link rel="stylesheet" href="css/checkboxes.css" />
-    <link rel="stylesheet" href="css/sourcerer.css" />
-    <link rel="stylesheet" href="css/jqueryui.css" />
-    <link rel="stylesheet" href="css/tipsy.css" />
-    <link rel="stylesheet" href="css/calendar.css" />
-    <link rel="stylesheet" href="css/tags.css" />
-    <link rel="stylesheet" href="css/selectboxes.css" />
-    <link rel="stylesheet" href="css/960.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" media="all and (orientation:portrait)" href="css/portrait.css" />
-    <link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/excanvas.js"></script>
-    <![endif]-->
-    
+    <link rel="stylesheet" href="<?php echo asset_url("admin/css/reset.css")?>" />
+    <link rel="stylesheet" href="<?php echo asset_url("admin/css/icons.css")?>" />
+    <link rel="stylesheet" href="<?php echo asset_url("admin/css/formalize.css")?>" />
+    <link rel="stylesheet" href="<?php echo asset_url("admin/css/checkboxes.css")?>" />
+    <link rel="stylesheet" href="<?php echo asset_url("admin/css/sourcerer.css")?>" />
+    <link rel="stylesheet" href="<?php echo asset_url("admin/css/jqueryui.css")?>" />
+    <link rel="stylesheet" href="<?php echo asset_url("admin/css/tipsy.css")?>" />
+    <link rel="stylesheet" href="<?php echo asset_url("admin/css/calendar.css")?>" />
+    <link rel="stylesheet" href="<?php echo asset_url("admin/css/tags.css")?>" />
+    <link rel="stylesheet" href="<?php echo asset_url("admin/css/selectboxes.css")?>" />
+    <link rel="stylesheet" href="<?php echo asset_url("admin/css/960.css")?>" />
+    <link rel="stylesheet" href="<?php echo asset_url("admin/css/main.css")?>" />
+    <link rel="stylesheet" media="all and (orientation:portrait)" href="<?php echo asset_url("admin/css/portrait.css")?>" />
+    <link rel="apple-touch-icon" href="<?php echo asset_url("admin/apple-touch-icon-precomposed.png")?>" />
+
+    <!--  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> -->
+
     <!-- JavaScript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jqueryui.min.js"></script>
-    <script src="js/jquery.cookies.js"></script>
-    <script src="js/jquery.pjax.js"></script>
-    <script src="js/formalize.min.js"></script>
-    <script src="js/jquery.metadata.js"></script>
-    <script src="js/jquery.validate.js"></script>
-    <script src="js/jquery.checkboxes.js"></script>
-    <script src="js/jquery.chosen.js"></script>
-    <script src="js/jquery.fileinput.js"></script>
-    <script src="js/jquery.datatables.js"></script>
-    <script src="js/jquery.sourcerer.js"></script>
-    <script src="js/jquery.tipsy.js"></script>
-    <script src="js/jquery.calendar.js"></script>
-    <script src="js/jquery.inputtags.min.js"></script>
-    <script src="js/jquery.wymeditor.js"></script>
-    <script src="js/jquery.livequery.js"></script>
-    <script src="js/jquery.flot.min.js"></script>
-    <script src="js/application.js"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.min.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jqueryui.min.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.cookies.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.pjax.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/formalize.min.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.metadata.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.validate.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.checkboxes.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.chosen.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.fileinput.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.datatables.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.sourcerer.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.tipsy.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.calendar.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.inputtags.min.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.wymeditor.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.livequery.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/jquery.flot.min.js")?>"></script>
+    <script src="<?php echo asset_url("admin/js/application.js")?>"></script>
   </head>
   
   <body>
@@ -58,13 +48,13 @@
     <nav id="primary">
       <ul>
 		<li>
-          <a href="index.html">
+          <a href="<?php echo site_url("adminPanel/admin")?>">
             <span class="icon32 home"></span>
             Home
           </a>
         </li>
 		<li>
-          <a href="menu.html">
+          <a href="<?php echo site_url("adminPanel/menu")?>">
             <span class="icon32 listicon"></span>
             Menu
           </a>
@@ -82,7 +72,7 @@
           </a>
         </li>
         <li class="bottom">
-          <a href="#">
+          <a href="<?php echo site_url('adminPanel/logout') ?>">
             <span class="icon32 quit"></span>
             Log out
           </a>

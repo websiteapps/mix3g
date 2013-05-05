@@ -9,3 +9,7 @@
 function asset_url($path){
     return base_url().'assets/'.$path;
 }
+
+function img_url($path){
+    return base_url().'uploads/'.$path;
+}

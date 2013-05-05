@@ -12,6 +12,8 @@ class Menu {
     private $menuFamilyId;
     private $menuName;
     private $menuPrice;
+    private $img;
+    private $menuType;
     private $flg;
 
     public function __construct()
@@ -23,6 +25,7 @@ class Menu {
 
     public function generateId(){
         $this->id = "m".time();
+        $this->img = "menu_" . $this->id . ".jpg";
     }
     public function setMenuFamilyId($menuFamilyId)
     {
@@ -73,4 +76,25 @@ class Menu {
     {
         return $this->menuPrice;
     }
+
+    public function setImg($img)
+    {
+        $this->img = $img;
+    }
+
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    public function setMenuType($menuType)
+    {
+        $this->menuType = $menuType;
+    }
+
+    public function getMenuType()
+    {
+        return $this->menuType;
+    }
+
 }
