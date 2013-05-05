@@ -27,4 +27,9 @@ class schema extends CI_Controller {
         $database = new Database();
         $database->createMenuTable();
     }
+
+    public function createSpecial(){
+        $database = new Database();
+        $database->createSpecialMenuTable();
+    }
 }

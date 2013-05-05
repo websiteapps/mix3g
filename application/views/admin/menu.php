@@ -45,10 +45,22 @@
       <script type="text/javascript">
           function showImageUpload() {
               var opt = document.getElementById('addMenuType').value;
-              if(opt == 'BEST_MENU' || opt == 'SPECIAL_MENU'){
-                    document.getElementById('imgUpload').style.display="block";
-              }else{
-                  document.getElementById('imgUpload').style.display="none";
+              if(opt == 'BEST_MENU'){
+                    document.getElementById('show_imgUpload').style.display="block";
+                    document.getElementById('show_menuFamily').style.display="none";
+                    document.getElementById('show_menuPrice').style.display="block";
+                    document.getElementById('show_secialMenuDesc').style.display="none";
+              }else if(opt == 'SPECIAL_MENU'){
+                    document.getElementById('show_menuFamily').style.display="none";
+                    document.getElementById('show_menuPrice').style.display="none";
+                    document.getElementById('show_imgUpload').style.display="block";
+                    document.getElementById('show_secialMenuDesc').style.display="block";
+              }
+              else{
+                  document.getElementById('show_menuFamily').style.display="block";
+                  document.getElementById('show_imgUpload').style.display="none";
+                  document.getElementById('show_secialMenuDesc').style.display="none";
+                  document.getElementById('show_menuPrice').style.display="block";
               }
           }
       </script>
@@ -107,7 +119,7 @@
                                           <option value='SPECIAL_MENU'>Special Menu</option>
                                       </select>
                                   </p>
-                                  <p>
+                                  <p id="show_menuFamily">
                                       <select id="menuFamilyType" class="{validate:{required:true}}" placeholder="Menu Family" name="menuFamilyType">
                                       <?php
                                       foreach($menuFamily as $mf){
@@ -119,11 +131,14 @@
                                   <p>
                                       <input type="text" id="menuName" placeholder="Menu Name" name="menuName"/>
                                   </p>
-                                  <p>
+                                  <p id="show_menuPrice"  style="DISPLAY: none;">
                                       <input type="text" id="menuPrice" placeholder="Menu Price" name="menuPrice" value="0"/>
                                   </p>
-                                  <p id="imgUpload" style="DISPLAY: none;">
+                                  <p id="show_imgUpload" style="DISPLAY: none;">
                                       <input type="file" id="menuPicture" name="menuPicture" placeholder="Menu Picture"/>
+                                  </p>
+                                  <p id="show_secialMenuDesc" style="DISPLAY: none;">
+                                      <textarea id="textarea" name="spl_desc" class="{validate:{required:true}}" name="textarea"></textarea>
                                   </p>
                                   <input type="submit" class="button blue" value="Save"/>
                                   </form>

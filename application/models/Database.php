@@ -103,6 +103,39 @@ class Database extends CI_Model {
             echo "Fail to Create Menu Table";
         }
     }
+
+    public function createSpecialMenuTable(){
+        $fields = array(
+            'id' => array(
+                'type' => 'varchar',
+                'constraint' => 50,
+            ),
+            'specialName' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ),
+            'specialDesc' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '500',
+            ),
+            'img' => array(
+                'type' => 'varchar',
+                'constraint' => '100',
+            ),
+            'flg' => array(
+                'type' => 'int',
+                'constraint' => '1',
+            ),
+        );
+        $this->dbforge->add_field($fields);
+        if($this->dbforge->create_table("special", TRUE)){
+            log_message('info','Special Table Created');
+            echo "Speical Table Created";
+        }else{
+            log_message('error','Application = Fail to Create Special Table');
+            echo "Fail to Create Speical Table";
+        }
+    }
     public function createContactTable(){
         $fields = array(
             'id' => array(

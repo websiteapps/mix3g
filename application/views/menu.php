@@ -45,10 +45,8 @@
                         <ul class="menu">
                             <li><a href="<?php echo site_url(); ?>">Home</a></li>
                             <li><a class="active" href="<?php echo site_url('home/menu')?>">Menu</a></li>
-                            <li><a href="catalogue.html">Catalogue </a></li>
-                            <li><a href="shipping.html">Shipping</a></li>
-                            <li><a href="faq.html">FAQ </a></li>
                             <li><a href="<?php echo site_url('home/contact')?>">Contact</a></li>
+                            <li><a href="<?php echo site_url("home/login")?>">Login</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -72,11 +70,13 @@
                         <div class="img-indent-bot">
                             <h3 class="prev-indent-bot">Special Offer</h3>
                             <div class="wrapper img-indent-bot">
-                                <figure class="img-indent"><img src="<?php echo asset_url("images/page2-img1.jpg")?>" alt=""></figure>
-                                <div class="extra-wrap">
-                                    <h5>Nam liber tempor cusoluta </h5>
-                                    Nobis eleifend option congue nihil imperdiet doming quod mazim placerat facer possim orem ipsum dolor sit consectetuer.
-                                </div>
+                                <?php
+                                    echo "<figure class='img-indent'><img width='210' height='125' src=". img_url($special[0]->img) ." alt=''></figure>";
+                                    echo "<div class='extra-wrap'>";
+                                    echo "<h5>".$special[0]->specialName." </h5>";
+                                    echo $special[0]->specialDesc;
+                                    echo "</div>";
+                                ?>
                             </div>
                             <a class="button-1" href="#">Read More</a>
                         </div>
@@ -136,9 +136,9 @@
     <footer>
         <div class="main">
         	<div class="aligncenter">
-            	<span>Catering.com &copy; 2012</span>
+                <span>Mix3G.com &copy; 2012</span>
                 <span>Developed by</span>
-                <a rel="nofollow" class="link" target="_blank" href="http://www.websiteapps.in">WebsiteApps</a>
+                <a rel="nofollow" class="link" target="_blank" href="http://www.websiteapps.in">WebsiteApps
             </div>
         </div>
     </footer>

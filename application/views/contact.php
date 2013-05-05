@@ -28,15 +28,13 @@
     	<div class="row-top">
         	<div class="main">
             	<div class="wrapper">
-                	<h1><a href="index.html">Catering<span>.com</span></a></h1>
+                    <h1><a href="<?php echo base_url() ?>">Vidhata's <span>Mix 3G</span></a></h1>
                     <nav>
                         <ul class="menu">
                             <li><a href="<?php echo site_url()?>">Home</a></li>
                             <li><a href="<?php echo site_url('home/menu')?>">Menu</a></li>
-                            <li><a href="catalogue.html">Catalogue </a></li>
-                            <li><a href="shipping.html">Shipping</a></li>
-                            <li><a href="faq.html">FAQ </a></li>
                             <li><a class="active" href="<?php echo site_url('home/contact')?>">Contact</a></li>
+                            <li><a href="<?php echo site_url("home/login")?>">Login</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -52,14 +50,14 @@
     </header>
     
 	<!--==============================content================================-->
-    <section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - January 23, 2012!</div>
+    <section id="content"><div class="ic"></div>
         <div class="main">
             <div class="wrapper">
             	<article class="col-1">
                 	<div class="indent-left">
                     	<h3 class="p1">Our Contacts</h3>
                         <figure class="indent-bot">
-                            <iframe width="240" height="180" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Brooklyn,+New+York,+NY,+United+States&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=61.282355,146.513672&amp;ie=UTF8&amp;hq=&amp;hnear=Brooklyn,+Kings,+New+York&amp;ll=40.649974,-73.950005&amp;spn=0.01628,0.025663&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+                            <iframe width="240" height="180" src="http://maps.google.co.in/maps?q=16.860292,74.569454&amp;num=1&amp;hl=en&amp;ie=UTF8&amp;ll=16.859717,74.570319&amp;spn=0.002747,0.005284&amp;t=m&amp;z=14&amp;output=embed"></iframe>
                         </figure>
                         <dl>
                             <?php
@@ -100,8 +98,9 @@
     <footer>
         <div class="main">
         	<div class="aligncenter">
-            	<span>Catering.com &copy; 2012</span>
-                <a rel="nofollow" class="link" target="_blank" href="http://www.templatemonster.com/">Website Template</a> by TemplateMonster.com | <a rel="nofollow" class="link" target="_blank" href="http://www.html5xcss3.com/">html5xcss3.com</a>
+                <span>Mix3G.com &copy; 2012</span>
+                <span>Developed by</span>
+                <a rel="nofollow" class="link" target="_blank" href="http://www.websiteapps.in">WebsiteApps
             </div>
         </div>
     </footer>

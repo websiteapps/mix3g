@@ -52,4 +52,17 @@ class Utilities extends CI_Model {
         $this->db->insert("menu",$data);
         log_message("info", "Menu Info Added to Database");
     }
+
+    public function addSpecial($special){
+        log_message("info","in addSpecial");
+        $data = array(
+            'id'=>$special->getId(),
+            'specialName'=>$special->getSpecialName(),
+            'SpecialDesc'=>$special->getSpecialDesc(),
+            'img'=>$special->getImg(),
+            'flg'=>$special->getFlg()
+        );
+        $this->db->insert("special",$data);
+        log_message("info", "Special Info Added to Database");
+    }
 }

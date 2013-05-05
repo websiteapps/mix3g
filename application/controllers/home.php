@@ -21,7 +21,10 @@ class Home extends CI_Controller {
         $bestMenuSql = "SELECT * FROM menu where flg = 1 and menuType='BEST_MENU'";
         $bestMenuSql = $this->db->query($bestMenuSql);
 
-        $data = array('menu'=>$menus,'bestMenu'=>$bestMenuSql->result());
+        $special = "SELECT* FROM special where flg = 1 ORDER BY id DESC";
+        $special = $this->db->query($special);
+
+        $data = array('menu'=>$menus,'bestMenu'=>$bestMenuSql->result(),'special'=>$special->result());
         $this->load->view('menu',$data);
     }
 
