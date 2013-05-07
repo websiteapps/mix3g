@@ -89,7 +89,7 @@
           </a>
         </li>
 		<li>
-          <a href="contact.html">
+          <a href="<?php echo site_url("adminPanel/contact")?>">
             <span class="icon32 new"></span>
             Contact
           </a>

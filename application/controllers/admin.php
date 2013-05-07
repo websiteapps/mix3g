@@ -10,23 +10,27 @@
 class admin extends CI_Controller {
     public function addContact(){
         $contact = new Contact();
-        $contact->setContactName("Digvijay Mohite");
-        $contact->setEmail("digsmoh@gmail.com");
-        $contact->setPhoneNumber("9960966003");
-        $contact->setPhoneNumber1("9960966003");
-        $contact->setPhoneNumber2("9960966003");
-        $contact->setFax("222222222");
-        $contact->setStreet("Mohtie Banglow");
-        $contact->setState("Maharashtra");
-        $contact->setCity("Sangli");
-        $contact->setZip("416416");
+        $contact->setContactName($this->input->post("contactName"));
+        $contact->setEmail($this->input->post("contactEmail"));
+        $contact->setPhoneNumber($this->input->post("phoneNumber"));
+        $contact->setPhoneNumber1($this->input->post("phoneNumber1"));
+        $contact->setPhoneNumber2($this->input->post("phoneNumber2"));
+        $contact->setFax($this->input->post("fax"));
+        $contact->setStreet($this->input->post("street"));
+        $contact->setState($this->input->post("state"));
+        $contact->setCity($this->input->post("city"));
+        $contact->setZip($this->input->post("zip"));
 
-        $contact->addContact($contact);
+        $utility = new Utilities();
+        $utility->addContact($contact);
+        redirect('adminPanel/contact','refresh');
+
     }
 
     public function addMenuFamily(){
         $menuFamily = new MenuFamily();
         $menuFamily->setMenuName($this->input->post("menuFamilyName"));
+
         $utility = new Utilities();
         $utility->addMenuFamily($menuFamily);
         redirect('adminPanel/menu', 'refresh');

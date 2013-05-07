@@ -148,15 +148,15 @@ class Database extends CI_Model {
             ),
             'phoneNumber' => array(
                 'type' =>'VARCHAR',
-                'constraint' => '10',
+                'constraint' => '20',
             ),
             'phoneNumber1' => array(
                 'type' =>'VARCHAR',
-                'constraint' => '10',
+                'constraint' => '20',
             ),
             'phoneNumber2' => array(
                 'type' =>'VARCHAR',
-                'constraint' => '10',
+                'constraint' => '20',
             ),
             'email' => array(
                 'type' =>'VARCHAR',
