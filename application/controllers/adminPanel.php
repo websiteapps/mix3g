@@ -26,7 +26,7 @@ class adminPanel extends CI_Controller {
                }
                if($this->session->userdata('logged_in'))
                {
-                  $this->load->view('admin/admin');
+                  $this->admin();
                }
            }
            else{
@@ -40,7 +40,14 @@ class adminPanel extends CI_Controller {
     public function admin(){
         if($this->session->userdata('logged_in'))
         {
-            $this->load->view("admin/admin");
+            $sql = "SELECT * FROM indeximage where flg=1 ORDER BY id desc";
+            $indexImage = $this->db->query($sql);
+
+            $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC";
+            $tagline = $this->db->query($sql);
+
+            $data = array('indexImage'=>$indexImage->result(),'tagline'=>$tagline->result());
+            $this->load->view("admin/admin",$data);
         }
     }
 

@@ -55,14 +55,19 @@
         <div class="row-bot">
         	<div class="row-bot-bg">
             	<div class="main">
-                	<h2>Impressive Selection <span>for any Occasion</span></h2>
+                    <?php
+                    foreach($tagline as $tag){
+                        echo "<h2>".$tag->tagline1."<span> ".$tag->tagline2."</span></h2>";
+                        break;
+                    }
+                    ?>
                 </div>
             </div>
         </div>
     </header>
     
 	<!--==============================content================================-->
-    <section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - January 23, 2012!</div>
+    <section id="content"><div class="ic"></div>
         <div class="main">
             <div class="wrapper">
             	<article class="col-1">

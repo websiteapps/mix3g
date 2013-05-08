@@ -65,4 +65,27 @@ class Utilities extends CI_Model {
         $this->db->insert("special",$data);
         log_message("info", "Special Info Added to Database");
     }
+
+    public function addIndexImage($indexImage){
+        log_message("info","in IndexImage");
+        $data = array(
+            'id'=>$indexImage->getId(),
+            'imgName'=>$indexImage->getImgName(),
+            'flg'=>$indexImage->getFlg()
+        );
+        $this->db->insert("indexImage",$data);
+        log_message("info", "IndexImage Added to Database");
+    }
+
+    public function addTageLine($tagline){
+        log_message("info","in TageLine");
+        $data = array(
+            'id'=>$tagline->getId(),
+            'tagline1'=>$tagline->getTagline1(),
+            'tagline2'=>$tagline->getTagline2(),
+            'flg'=>$tagline->getFlg()
+        );
+        $this->db->insert("tagline",$data);
+        log_message("info", "TagLine Added to Database");
+    }
 }

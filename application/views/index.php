@@ -47,19 +47,28 @@
         <div class="row-bot">
         	<div class="row-bot-bg">
             	<div class="main">
-                	<h2>Impressive Selection <span>for any Occasion</span></h2>
+                    <?php
+                        foreach($tagline as $tag){
+                            echo "<h2>".$tag->tagline1."<span> ".$tag->tagline2."</span></h2>";
+                            break;
+                        }
+                    ?>
                     <div class="slider-wrapper">
                         <div class="slider">
                             <ul class="items">
-                                <li>
-                                    <img src="<?php echo asset_url("images/slider-img1.jpg")?>" alt="" />
-                                </li>
-                                <li>
-                                    <img src="<?php echo asset_url("images/slider-img2.jpg")?>" alt="" />
-                                </li>
-                                <li>
-                                    <img src="<?php echo asset_url("images/slider-img3.jpg")?>" alt="" />
-                                </li>
+                                <?php
+                                    $count = 1;
+                                    foreach($indexImage as $img){
+                                        if($count > 3){
+                                            break;
+                                        }
+                                        $count++;
+
+                                        echo "<li>";
+                                        echo "<img src=".img_url($img->imgName) ." alt='' />";
+                                        echo "</li>";
+                                    }
+                                ?>
                             </ul>
                         </div>
                     </div>
@@ -69,7 +78,7 @@
     </header>
     
 	<!--==============================content================================-->
-    <section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - January 23, 2012!</div>
+    <section id="content"><div class="ic"></div>
         <div class="main">
             <div class="wrapper img-indent-bot">
                 <article class="col-1">

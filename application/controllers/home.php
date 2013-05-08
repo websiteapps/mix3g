@@ -4,7 +4,14 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('index');
+        $sql = "SELECT * FROM indeximage where flg=1 ORDER BY id DESC";
+        $indexImage = $this->db->query($sql);
+
+        $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC";
+        $tagline = $this->db->query($sql);
+
+        $data = array('indexImage'=>$indexImage->result(),'tagline'=>$tagline->result());
+      	$this->load->view('index',$data);
 	}
 
     public function menu(){
@@ -24,15 +31,22 @@ class Home extends CI_Controller {
         $special = "SELECT* FROM special where flg = 1 ORDER BY id DESC";
         $special = $this->db->query($special);
 
-        $data = array('menu'=>$menus,'bestMenu'=>$bestMenuSql->result(),'special'=>$special->result());
+        $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC";
+        $tagline = $this->db->query($sql);
+
+        $data = array('menu'=>$menus,'bestMenu'=>$bestMenuSql->result(),'special'=>$special->result(),'tagline'=>$tagline->result());
         $this->load->view('menu',$data);
     }
 
     public function contact(){
         $sql = "SELECT * FROM contact Order by id desc";
-        $data = $this->db->query($sql);
-        $data = $data->result();
-        $this->load->view('contact', $data[0]);
+        $contact = $this->db->query($sql);
+
+        $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC";
+        $tagline = $this->db->query($sql);
+
+        $data = array('tagline'=>$tagline->result(),'contact'=>$contact->result());
+        $this->load->view('contact', $data);
     }
 
     public function login(){

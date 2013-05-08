@@ -192,4 +192,58 @@ class Database extends CI_Model {
             echo "Fail to Create Contact Table";
         }
     }
+
+    public function createIndexImage(){
+        $fields = array(
+            'id' => array(
+                'type' => 'varchar',
+                'constraint' => 50,
+            ),
+            'imgName' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ),
+            'flg' => array(
+                'type' => 'int',
+                'constraint' => '1',
+            ),
+        );
+        $this->dbforge->add_field($fields);
+        if($this->dbforge->create_table("indexImage", TRUE)){
+            log_message('info','IndexImage Table Created');
+            echo "IndexImage Table Created";
+        }else{
+            log_message('error','Application = Fail to Create IndexImage Table');
+            echo "Fail to Create IndexImage Table";
+        }
+    }
+
+    public function createTageLine(){
+        $fields = array(
+            'id' => array(
+                'type' => 'varchar',
+                'constraint' => 50,
+            ),
+            'tagline1' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ),
+            'tagline2' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ),
+            'flg' => array(
+                'type' => 'int',
+                'constraint' => '1',
+            ),
+        );
+        $this->dbforge->add_field($fields);
+        if($this->dbforge->create_table("tagline", TRUE)){
+            log_message('info','Tagline Table Created');
+            echo "Tagline Table Created";
+        }else{
+            log_message('error','Application = Fail to Create Tagline Table');
+            echo "Fail to Create Tagline Table";
+        }
+    }
 }

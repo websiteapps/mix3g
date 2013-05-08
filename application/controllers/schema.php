@@ -32,4 +32,14 @@ class schema extends CI_Controller {
         $database = new Database();
         $database->createSpecialMenuTable();
     }
+
+    public function createIndexImage(){
+        $database = new Database();
+        $database->createIndexImage();
+    }
+
+    public function createTagLine(){
+        $database = new Database();
+        $database->createTageLine();
+    }
 }

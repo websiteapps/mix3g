@@ -61,7 +61,7 @@ class admin extends CI_Controller {
             $this->load->library('upload', $config);
 
             if ($this->upload->do_upload("menuPicture")){
-                log_message("info","BestMenu image uploaded". $special->getImg());
+                log_message("info","Special image uploaded". $special->getImg());
                 $utility = new Utilities();
                 $utility->addSpecial($special);
                 redirect('adminPanel/menu', 'refresh');
@@ -106,6 +106,37 @@ class admin extends CI_Controller {
             $utility->addMenu($menu);
             redirect('adminPanel/menu', 'refresh');
         }
+    }
+
+    public function addIndexImage(){
+        $indexImage = new IndexImage();
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'jpg';
+        $config['max_size']	= '1000';
+        $config['max_width']  = '1024';
+        $config['max_height']  = '768';
+        $config['file_name'] = $indexImage->getImgName();
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload("indexPicture")){
+            log_message("info","Index image uploaded". $indexImage->getImgName());
+            $utility = new Utilities();
+            $utility->addIndexImage($indexImage);
+            redirect('adminPanel/admin', 'refresh');
+        }else{
+            log_message("info","Fail to Upload Index Image". $indexImage->getImgName());
+            echo $this->upload->display_errors();
+        }
+    }
+
+    public function addTagLine(){
+        $tagline = new TagLine();
+        $tagline->setTagline1($this->input->post("tagLine1"));
+        $tagline->setTagline2($this->input->post("tagLine2"));
+
+        $utility = new Utilities();
+        $utility->addTageLine($tagline);
+        redirect('adminPanel/admin','refresh');
     }
 
     public function sendEmail(){

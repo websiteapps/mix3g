@@ -80,7 +80,66 @@
       </ul>
     </nav>
     <section id="maincontainer">
-      
+        <div id="main" class="container_12">
+            <div class="box">
+                <div class="box-header">
+                    <h1>Index Picture</h1>
+                </div>
+                <div>
+                    <div style="padding:10px 10px 10px 10px;width:370px;float:left;">
+                    <?php echo form_open_multipart('admin/addIndexImage');?>
+                    <p>
+                        <input type="file" id="indexPicture" name="indexPicture" placeholder="Index picture" />
+                    </p>
+                    <input type="submit" class="button blue" value="Save"/>
+                    <span>Note : Image Should be of 940 X 466 for Best Results </span>
+                    </form>
+                    </div>
+                    <div style="padding:10px 10px 10px 10px;float:right;">
+                        <?php
+                            $count = 1;
+                            foreach($indexImage as $img){
+                                if($count > 3){
+                                    break;
+                                }
+                                $count++;
+                                echo "<div style='float:left;padding-right: 20px;padding-left: 20px;'>";
+                                echo "<img height='100' widht='150' src=".img_url($img->imgName) ." alt='' />";
+                                echo "</div>";
+                            }
+                        ?>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h1>Tag Line</h1>
+                </div>
+                <div>
+                    <div style="padding:10px 10px 10px 10px;float:left;">
+                        <?php echo form_open_multipart('admin/addTagLine');?>
+                        <p>
+                        <div style="width:400px;float:left;"><input type="text" id="tagLine1" placeholder="Tag" name="tagLine1"/></div>
+                        <div style="width:300px;float:left;"><input type="text" id="tagLine2" placeholder="Line" name="tagLine2"/></div>
+                        </p>
+                        <input type="submit" class="button blue" value="Save"/>
+                        </form>
+                    </div>
+                    <div style="padding:10px 10px 10px 10px;float:left;">
+                        <p><h4>
+                        <?php
+                            foreach($tagline as $tag){
+                                echo $tag->tagline1 . " " . $tag->tagline2;
+                                break;
+                            }
+                        ?>
+                        </h4></p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
     </section>
   </body>
 </html>

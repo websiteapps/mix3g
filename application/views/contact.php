@@ -73,7 +73,12 @@
         <div class="row-bot">
         	<div class="row-bot-bg">
             	<div class="main">
-                	<h2>Impressive Selection <span>for any Occasion</span></h2>
+                    <?php
+                    foreach($tagline as $tag){
+                        echo "<h2>".$tag->tagline1."<span> ".$tag->tagline2."</span></h2>";
+                        break;
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -91,11 +96,14 @@
                         </figure>
                         <dl>
                             <?php
-                                echo "<dt class='p1'>$street, $state, $city</dt>";
-                                echo "<dd><span>Freephone:</span>$phoneNumber</dd>";
-                                echo "<dd><span>Telephone:</span>$phoneNumber1</dd>";
-                                echo "<dd><span>Fax:</span>$fax</dd>";
-                                echo "<dd><span>Email:</span><a class='color-2'>$email</a></dd>";
+                                foreach($contact as $info){
+                                    echo "<dt class='p1'>$info->street, $info->state, $info->city</dt>";
+                                    echo "<dd><span>Freephone:</span>$info->phoneNumber</dd>";
+                                    echo "<dd><span>Telephone:</span>$info->phoneNumber1</dd>";
+                                    echo "<dd><span>Fax:</span>$info->fax</dd>";
+                                    echo "<dd><span>Email:</span><a class='color-2'>$info->email</a></dd>";
+                                    break;
+                                }
                             ?>
                         </dl>
                     </div>
