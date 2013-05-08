@@ -21,6 +21,36 @@
     <!--[if lt IE 9]>
    		<script type="text/javascript" src="<?php echo asset_url("js/html5.js")?>"></script>
 	<![endif]-->
+    <script type="text/javascript">
+        function send(){
+            var xmlhttp;
+            if(window.XMLHttpRequest){
+                xmlhttp=new XMLHttpRequest();
+            }else{
+                xmlhttp=new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            var url ="name="+document.contact.name.value +
+                "&email="+document.contact.email.value +
+                "&msg="+document.contact.msg.value;
+
+            xmlhttp.onreadystatechange=function()
+            {
+                if(xmlhttp.readyState == 4 && xmlhttp.status== 200)
+                {
+                    if(xmlhttp.responseText == 1){
+                        document.getElementById('contact-form').reset();
+                        document.getElementById('ajaxResponse').innerHTML="Message Send";
+                    }else{
+                        document.getElementById('ajaxResponse').innerHTML="Fail to Send Message. Please Contact us via Phone Number";
+                    }
+                }
+            }
+            xmlhttp.open("post","<?php echo site_url('admin/sendEmail')?>",true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.setRequestHeader("Content-length",url.length);
+            xmlhttp.send(url);
+        }
+    </script>
 </head>
 <body id="page6">
 	<!--==============================header=================================-->
@@ -72,19 +102,21 @@
                 </article>
                 <article class="col-2">
                 	<h3 class="p1">Contact Form</h3>
-                    <form id="contact-form" method="post" enctype="multipart/form-data">                    
+                    <form id="contact-form" name="contact">
                         <fieldset>
                               <label><span class="text-form">Your Name:</span><input name="name" type="text" /></label>
                               <label><span class="text-form">Your Email:</span><input name="email" type="text" /></label>                              
                               <div class="wrapper">
                                 <div class="text-form">Your Message:</div>
                                 <div class="extra-wrap">
-                                    <textarea></textarea>
+                                    <textarea name="msg"></textarea>
                                     <div class="clear"></div>
+
                                     <div class="buttons">
-                                        <a class="button-2" href="#" onClick="document.getElementById('contact-form').reset()">Clear</a>
-                                        <a class="button-2" href="#" onClick="document.getElementById('contact-form').submit()">Send</a>
-                                    </div> 
+                                        <a class="button-2" onClick="document.getElementById('contact-form').reset()">Clear</a>
+                                        <a class="button-2" onClick="send()">Send</a>
+                                    </div>
+                                    <span id='ajaxResponse'></span>
                                 </div>
                               </div>                            
                         </fieldset>						

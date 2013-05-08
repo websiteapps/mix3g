@@ -107,4 +107,36 @@ class admin extends CI_Controller {
             redirect('adminPanel/menu', 'refresh');
         }
     }
+
+    public function sendEmail(){
+        $name = $this->input->post("name");
+        $email = $this->input->post("email");
+        $msg = $this->input->post("msg");
+
+        $msg .= "Contact Email = ".$email."<br>".$msg;
+
+        $config = Array(
+            'protocol' => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_port' => 465,
+            'smtp_user' => 'digsmoh@gmail.com',
+            'smtp_pass' => '1nc1p1entg',
+            'mailtype'  => 'html',
+            'charset'   => 'iso-8859-1'
+        );
+        $this->load->library('email', $config);
+        $this->email->set_newline("\r\n");
+        $this->email->from($email);
+        $this->email->to('digvijaymohite27@gmail.com');
+        $this->email->subject('Mail from '.$name);
+        $this->email->message($msg);
+
+        if($this->email->send()){
+            echo '1';
+            log_message("info","Email Send");
+        }else{
+            log_message("error",$this->email->print_debugger());
+            echo '0';
+        }
+    }
 }
