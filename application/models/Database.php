@@ -246,4 +246,29 @@ class Database extends CI_Model {
             echo "Fail to Create Tagline Table";
         }
     }
+
+    public function createAbout(){
+        $fields = array(
+            'id' => array(
+                'type' => 'varchar',
+                'constraint' => 50,
+            ),
+            'about' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '1000',
+            ),
+            'flg' => array(
+                'type' => 'int',
+                'constraint' => '1',
+            ),
+        );
+        $this->dbforge->add_field($fields);
+        if($this->dbforge->create_table("about", TRUE)){
+            log_message('info','About Table Created');
+            echo "About Table Created";
+        }else{
+            log_message('error','Application = Fail to Create About Table');
+            echo "Fail to Create About Table";
+        }
+    }
 }

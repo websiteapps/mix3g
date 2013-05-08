@@ -46,7 +46,10 @@ class adminPanel extends CI_Controller {
             $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC";
             $tagline = $this->db->query($sql);
 
-            $data = array('indexImage'=>$indexImage->result(),'tagline'=>$tagline->result());
+            $sql = "SELECT * FROM about where flg=1 ORDER BY id DESC";
+            $about = $this->db->query($sql);
+
+            $data = array('indexImage'=>$indexImage->result(),'tagline'=>$tagline->result(),'about'=>$about->result());
             $this->load->view("admin/admin",$data);
         }
     }
@@ -73,8 +76,8 @@ class adminPanel extends CI_Controller {
         if($this->session->userdata('logged_in')){
             $sql = "SELECT * FROM contact Order by id desc";
             $data = $this->db->query($sql);
-            $data = $data->result();
-            $this->load->view("admin/contact",$data[0]);
+            $data = array('contact'=>$data->result());
+            $this->load->view("admin/contact",$data);
         }
     }
 

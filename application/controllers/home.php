@@ -7,11 +7,14 @@ class Home extends CI_Controller {
         $sql = "SELECT * FROM indeximage where flg=1 ORDER BY id DESC";
         $indexImage = $this->db->query($sql);
 
-        $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC";
+        $sql = "SELECT * FROM tagline where flg=1 ORDER BY id DESC";
         $tagline = $this->db->query($sql);
 
-        $data = array('indexImage'=>$indexImage->result(),'tagline'=>$tagline->result());
-      	$this->load->view('index',$data);
+        $sql = "SELECT * FROM about where flg=1 ORDER BY id DESC";
+        $about = $this->db->query($sql);
+
+        $data = array('indexImage'=>$indexImage->result(),'tagline'=>$tagline->result(),'about'=>$about->result());
+       	$this->load->view('index',$data);
 	}
 
     public function menu(){

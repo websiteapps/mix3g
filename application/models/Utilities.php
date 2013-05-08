@@ -88,4 +88,15 @@ class Utilities extends CI_Model {
         $this->db->insert("tagline",$data);
         log_message("info", "TagLine Added to Database");
     }
+
+    public function addAbout($about){
+        log_message("info","in About");
+        $data = array(
+            'id'=>$about->getId(),
+            'about'=>$about->getAbout(),
+            'flg'=>$about->getFlg()
+        );
+        $this->db->insert("about",$data);
+        log_message("info", "About Added to Database");
+    }
 }

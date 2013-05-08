@@ -125,16 +125,19 @@
 
                     <table style="width:500px;">
                         <?php
-                            echo "<tr><td>Name</td><td>$contactName</td></tr>";
-                            echo "<tr><td>Phone Number</td><td>$phoneNumber</td></tr>";
-                            echo "<tr><td>Phone Number 1</td><td>$phoneNumber1</td></tr>";
-                            echo "<tr><td>Phone Number 2</td><td>$phoneNumber2</td></tr>";
-                            echo "<tr><td>Email</td><td>$email</td></tr>";
-                            echo "<tr><td>Fax</td><td>$fax</td></tr>";
-                            echo "<tr><td>Street</td><td>$street</td></tr>";
-                            echo "<tr><td>State</td><td>$state</td></tr>";
-                            echo "<tr><td>City</td><td>$city</td></tr>";
-                            echo "<tr><td>Zip</td><td>$zip</td></tr>";
+                            foreach($contact as $info){
+                                echo "<tr><td>Name</td><td>$info->contactName</td></tr>";
+                                echo "<tr><td>Phone Number</td><td>$info->phoneNumber</td></tr>";
+                                echo "<tr><td>Phone Number 1</td><td>$info->phoneNumber1</td></tr>";
+                                echo "<tr><td>Phone Number 2</td><td>$info->phoneNumber2</td></tr>";
+                                echo "<tr><td>Email</td><td>$info->email</td></tr>";
+                                echo "<tr><td>Fax</td><td>$info->fax</td></tr>";
+                                echo "<tr><td>Street</td><td>$info->street</td></tr>";
+                                echo "<tr><td>State</td><td>$info->state</td></tr>";
+                                echo "<tr><td>City</td><td>$info->city</td></tr>";
+                                echo "<tr><td>Zip</td><td>$info->zip</td></tr>";
+                                break;
+                            }
                         ?>
                     </table>
                 </div>

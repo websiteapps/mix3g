@@ -139,6 +139,14 @@ class admin extends CI_Controller {
         redirect('adminPanel/admin','refresh');
     }
 
+    public function addAbout(){
+        $about = new About();
+        $about->setAbout($this->input->post('about'));
+
+        $utility = new Utilities();
+        $utility->addAbout($about);
+        redirect('adminPanel/admin','refresh');
+    }
     public function sendEmail(){
         $name = $this->input->post("name");
         $email = $this->input->post("email");

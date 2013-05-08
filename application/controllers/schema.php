@@ -42,4 +42,9 @@ class schema extends CI_Controller {
         $database = new Database();
         $database->createTageLine();
     }
+
+    public function createAbout(){
+        $database = new Database();
+        $database->createAbout();
+    }
 }

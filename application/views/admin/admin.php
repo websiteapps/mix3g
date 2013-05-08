@@ -19,7 +19,6 @@
     <link rel="stylesheet" media="all and (orientation:portrait)" href="<?php echo asset_url("admin/css/portrait.css")?>" />
     <link rel="apple-touch-icon" href="<?php echo asset_url("admin/apple-touch-icon-precomposed.png")?>" />
 
-    <!--  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> -->
 
     <!-- JavaScript -->
     <script src="<?php echo asset_url("admin/js/jquery.min.js")?>"></script>
@@ -92,7 +91,7 @@
                         <input type="file" id="indexPicture" name="indexPicture" placeholder="Index picture" />
                     </p>
                     <input type="submit" class="button blue" value="Save"/>
-                    <span>Note : Image Should be of 940 X 466 for Best Results </span>
+                    <span>Note : Image Should be of 940p X 466 for Best Results </span>
                     </form>
                     </div>
                     <div style="padding:10px 10px 10px 10px;float:right;">
@@ -120,21 +119,52 @@
                     <div style="padding:10px 10px 10px 10px;float:left;">
                         <?php echo form_open_multipart('admin/addTagLine');?>
                         <p>
-                        <div style="width:400px;float:left;"><input type="text" id="tagLine1" placeholder="Tag" name="tagLine1"/></div>
-                        <div style="width:300px;float:left;"><input type="text" id="tagLine2" placeholder="Line" name="tagLine2"/></div>
+                        <div style="width:400px;float:left;">
+                            <input type="text" id="tagline1" placeholder="Tag" name="tagLine1" class="{validate:{required:true, minlength:3}}" />
+                        </div>
+                        <div style="width:300px;float:left;">
+                            <input type="text" id="tagline2" placeholder="Tag" name="tagLine2" class="{validate:{required:true, minlength:3}}" />
+                        </div>
                         </p>
                         <input type="submit" class="button blue" value="Save"/>
                         </form>
                     </div>
                     <div style="padding:10px 10px 10px 10px;float:left;">
-                        <p><h4>
+                        <br>
+                        <p>
                         <?php
                             foreach($tagline as $tag){
                                 echo $tag->tagline1 . " " . $tag->tagline2;
                                 break;
                             }
                         ?>
-                        </h4></p>
+                        </p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h1>About Us</h1>
+                </div>
+                <div>
+                    <div style="padding:10px 10px 10px 10px;width:600px;float:left;">
+                        <?php echo form_open_multipart('admin/addAbout');?>
+                        <p>
+                            <textarea id="textarea" name="about" class="{validate:{required:true}}">About Us</textarea>
+                        </p>
+                        <input type="submit" class="button blue" value="Save"/>
+                        </form>
+                    </div>
+                    <div style="padding:10px 10px 10px 10px;float:left;width:570px;">
+                        <p>
+                            <?php
+                                foreach($about as $info){
+                                    echo $info->about;
+                                    break;
+                                }
+                            ?>
+                        </p>
                     </div>
                 </div>
                 <div class="clear"></div>
