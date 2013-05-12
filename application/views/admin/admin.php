@@ -91,7 +91,7 @@
                         <input type="file" id="indexPicture" name="indexPicture" placeholder="Index picture" />
                     </p>
                     <input type="submit" class="button blue" value="Save"/>
-                    <span>Note : Image Should be of 940p X 466 for Best Results </span>
+                    <span>Note : Image Should be of 940 X 466 for Best Results </span>
                     </form>
                     </div>
                     <div style="padding:10px 10px 10px 10px;float:right;">
@@ -106,6 +106,36 @@
                                 echo "<img height='100' widht='150' src=".img_url($img->imgName) ." alt='' />";
                                 echo "</div>";
                             }
+                        ?>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h1>Sub-Index Picture</h1>
+                </div>
+                <div>
+                    <div style="padding:10px 10px 10px 10px;width:370px;float:left;">
+                        <?php echo form_open_multipart('admin/addSubIndexImage');?>
+                        <p>
+                            <input type="file" id="subIndexPicture" name="subIndexPicture" placeholder=" Sub-Index picture" />
+                        </p>
+                        <input type="submit" class="button blue" value="Save"/>
+                        </form>
+                    </div>
+                    <div style="padding:10px 10px 10px 10px;float:right;">
+                        <?php
+                        $count = 1;
+                        foreach($subIndex as $img){
+                            if($count > 3){
+                                break;
+                            }
+                            $count++;
+                            echo "<div style='float:left;padding-right: 20px;padding-left: 20px;'>";
+                            echo "<img height='100' widht='150' src=".img_url($img->imgName) ." alt='' />";
+                            echo "</div>";
+                        }
                         ?>
                     </div>
                 </div>
@@ -163,6 +193,32 @@
                                     echo $info->about;
                                     break;
                                 }
+                            ?>
+                        </p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h1>About Us</h1>
+                </div>
+                <div>
+                    <div style="padding:10px 10px 10px 10px;width:600px;float:left;">
+                        <?php echo form_open_multipart('admin/addWhyUs');?>
+                        <p>
+                            <textarea id="textarea" name="whyUs" class="{validate:{required:true}}">Why Us</textarea>
+                        </p>
+                        <input type="submit" class="button blue" value="Save"/>
+                        </form>
+                    </div>
+                    <div style="padding:10px 10px 10px 10px;float:left;width:570px;">
+                        <p>
+                            <?php
+                            foreach($about as $info){
+                                echo $info->about;
+                                break;
+                            }
                             ?>
                         </p>
                     </div>

@@ -38,6 +38,11 @@ class schema extends CI_Controller {
         $database->createIndexImage();
     }
 
+    public function createSubIndex(){
+        $database = new Database();
+        $database->createSubIndexImage();
+    }
+
     public function createTagLine(){
         $database = new Database();
         $database->createTageLine();
@@ -46,5 +51,10 @@ class schema extends CI_Controller {
     public function createAbout(){
         $database = new Database();
         $database->createAbout();
+    }
+
+    public function createWhyUs(){
+        $database = new Database();
+        $database->createWhyus();
     }
 }

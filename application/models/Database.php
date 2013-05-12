@@ -218,6 +218,31 @@ class Database extends CI_Model {
         }
     }
 
+    public function createSubIndexImage(){
+        $fields = array(
+            'id' => array(
+                'type' => 'varchar',
+                'constraint' => 50,
+            ),
+            'imgName' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ),
+            'flg' => array(
+                'type' => 'int',
+                'constraint' => '1',
+            ),
+        );
+        $this->dbforge->add_field($fields);
+        if($this->dbforge->create_table("subIndex", TRUE)){
+            log_message('info','SubIndex Table Created');
+            echo "SubIndex Table Created";
+        }else{
+            log_message('error','Application = Fail to Create SubIndex Table');
+            echo "Fail to Create SubIndex Table";
+        }
+    }
+
     public function createTageLine(){
         $fields = array(
             'id' => array(
@@ -269,6 +294,31 @@ class Database extends CI_Model {
         }else{
             log_message('error','Application = Fail to Create About Table');
             echo "Fail to Create About Table";
+        }
+    }
+
+    public function createWhyus(){
+        $fields = array(
+            'id' => array(
+                'type' => 'varchar',
+                'constraint' => 50,
+            ),
+            'whyUs' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '500',
+            ),
+            'flg' => array(
+                'type' => 'int',
+                'constraint' => '1',
+            ),
+        );
+        $this->dbforge->add_field($fields);
+        if($this->dbforge->create_table("whyUs", TRUE)){
+            log_message('info','WhyUs Table Created');
+            echo "WhyUs Table Created";
+        }else{
+            log_message('error','Application = Fail to Create WhyUs Table');
+            echo "Fail to Create WhyUs Table";
         }
     }
 }

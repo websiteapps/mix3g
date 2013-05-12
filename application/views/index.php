@@ -81,29 +81,35 @@
     <section id="content"><div class="ic"></div>
         <div class="main">
             <div class="wrapper img-indent-bot">
-                <article class="col-1">
-                	<a href="#"><img class="img-border" src="<?php echo asset_url("images/banner-1.jpg")?>" alt=""></a>
-                </article>
-                <article class="col-1">
-                	<a href="#"><img class="img-border" src="<?php echo asset_url("images/banner-2.jpg")?>" alt=""></a>
-                </article>
-                <article class="col-2">
-                	<a href="#"><img class="img-border" src="<?php echo asset_url("images/banner-3.jpg")?>" alt=""></a>
-                </article>
+                <?php
+                $count = 1;
+                foreach($subIndex as $img){
+                    if($count > 3){
+                        break;
+                    }
+                    $count++;
+
+                    if($count == 3){
+                        echo "<article class='col-2'>";
+                    }else{
+                        echo "<article class='col-1'>";
+                    }
+                    echo "<a href=''><img height='170px' width='300px' class='img-border' src=".img_url($img->imgName)." alt=''></a><img src= alt='' />";
+                    echo "</article>";
+                }
+                ?>
             </div>
             <div class="wrapper">
             	<article class="column-1">
                 	<div class="indent-left">
                         <div class="maxheight indent-bot">
-                            <h3>Our Services</h3>
+                            <h3>Why Us..</h3>
                             <ul class="list-1">
-                                <li><a href="#">Duis autem vel eum iriure dolor</a></li>
-                                <li><a href="#">Hendrerit in vulputate velit esse molestie </a></li>
-                                <li><a href="#">Consequat vel illum dolore</a></li>
-                                <li><a href="#">Feugiat nulla facilisis at vero eros</a></li>
-                                <li><a href="#">Accumsan et iusto odio dignissim qui</a></li>
-                                <li><a href="#">Blandit praesent luptatum azril</a></li>
-                                <li><a href="#">Delenit augue duis dolore te feugait</a></li>
+                                <?php
+                                foreach($whyUs as $item){
+                                    echo "<li><a>$item->whyUs</a></li>";
+                                }
+                                ?>
                             </ul>
                         </div>
                         <a class="button-1" href="#">Read More</a>

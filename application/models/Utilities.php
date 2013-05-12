@@ -77,6 +77,17 @@ class Utilities extends CI_Model {
         log_message("info", "IndexImage Added to Database");
     }
 
+    public function addSubIndex($subIndex){
+        log_message("info","in subIndex");
+        $data = array(
+            'id'=>$subIndex->getId(),
+            'imgName'=>$subIndex->getImgName(),
+            'flg'=>$subIndex->getFlg()
+        );
+        $this->db->insert("subIndex",$data);
+        log_message("info", "subIndex Added to Database");
+    }
+
     public function addTageLine($tagline){
         log_message("info","in TageLine");
         $data = array(
@@ -98,5 +109,16 @@ class Utilities extends CI_Model {
         );
         $this->db->insert("about",$data);
         log_message("info", "About Added to Database");
+    }
+
+    public function addWhyUs($whyUs){
+        log_message("info","in WhyUs");
+        $data = array(
+            'id'=>$whyUs->getId(),
+            'whyUs'=>$whyUs->getwhyUs(),
+            'flg'=>$whyUs->getFlg()
+        );
+        $this->db->insert("whyUs",$data);
+        log_message("info", "WhyUs Added to Database");
     }
 }

@@ -13,8 +13,14 @@ class Home extends CI_Controller {
         $sql = "SELECT * FROM about where flg=1 ORDER BY id DESC";
         $about = $this->db->query($sql);
 
-        $data = array('indexImage'=>$indexImage->result(),'tagline'=>$tagline->result(),'about'=>$about->result());
-       	$this->load->view('index',$data);
+        $sql = "SELECT * FROM subIndex WHERE flg = 1 ORDER BY id DESC";
+        $subIndex = $this->db->query($sql);
+
+        $sql = "SELECT * FROM whyUs WHERE flg = 1 ORDER BY id DESC";
+        $whyUs = $this->db->query($sql);
+
+        $data = array('indexImage'=>$indexImage->result(),'subIndex'=>$subIndex->result(),'tagline'=>$tagline->result(),'whyUs'=>$whyUs->result(),'about'=>$about->result());
+      	$this->load->view('index',$data);
 	}
 
     public function menu(){

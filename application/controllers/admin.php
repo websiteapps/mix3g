@@ -129,6 +129,27 @@ class admin extends CI_Controller {
         }
     }
 
+    public function addSubIndexImage(){
+        $subIndex = new SubIndex();
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'jpg';
+        $config['max_size']	= '1000';
+        $config['max_width']  = '1024';
+        $config['max_height']  = '768';
+        $config['file_name'] = $subIndex->getImgName();
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload("subIndexPicture")){
+            log_message("info","Index image uploaded". $subIndex->getImgName());
+            $utility = new Utilities();
+            $utility->addSubIndex($subIndex);
+            redirect('adminPanel/admin', 'refresh');
+        }else{
+            log_message("info","Fail to Upload Index Image". $subIndex->getImgName());
+            echo $this->upload->display_errors();
+        }
+    }
+
     public function addTagLine(){
         $tagline = new TagLine();
         $tagline->setTagline1($this->input->post("tagLine1"));
@@ -136,6 +157,15 @@ class admin extends CI_Controller {
 
         $utility = new Utilities();
         $utility->addTageLine($tagline);
+        redirect('adminPanel/admin','refresh');
+    }
+
+    public function addWhyUs(){
+        $whyUs = new WhyUs();
+        $whyUs->setWhyus($this->input->post("whyUs"));
+
+        $utility = new Utilities();
+        $utility->addWhyUs($whyUs);
         redirect('adminPanel/admin','refresh');
     }
 
