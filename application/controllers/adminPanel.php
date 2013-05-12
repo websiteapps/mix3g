@@ -26,7 +26,7 @@ class adminPanel extends CI_Controller {
                }
                if($this->session->userdata('logged_in'))
                {
-                  $this->admin();
+                  $this->dashbord();
                }
            }
            else{
@@ -54,6 +54,13 @@ class adminPanel extends CI_Controller {
 
             $data = array('indexImage'=>$indexImage->result(),'subIndex'=>$subIndex->result(),'tagline'=>$tagline->result(),'about'=>$about->result());
             $this->load->view("admin/admin",$data);
+        }
+    }
+
+    public function dashbord(){
+        if($this->session->userdata('logged_in'))
+        {
+            $this->load->view('admin/dashbord');
         }
     }
 

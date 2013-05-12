@@ -47,6 +47,12 @@
     <!-- Primary navigation -->
     <nav id="primary">
       <ul>
+          <li>
+              <a href="<?php echo site_url("adminPanel/dashbord") ?>">
+                  <span class="icon32 dashboard"></span>
+                  Dashboard
+              </a>
+          </li>
 		<li>
           <a href="<?php echo site_url("adminPanel/admin")?>">
             <span class="icon32 home"></span>
@@ -65,7 +71,7 @@
             People
           </a>
         </li>
-		<li>
+		<li class="active">
           <a href="">
             <span class="icon32 new"></span>
             Contact
