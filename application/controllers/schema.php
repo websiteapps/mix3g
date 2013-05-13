@@ -9,6 +9,20 @@
 
 class schema extends CI_Controller {
 
+    public function setUp(){
+        $database = new Database();
+        $database->createLoginTable();
+        $database->createContactTable();
+        $database->createFamilyTable();
+        $database->createMenuTable();
+        $database->createSpecialMenuTable();
+        $database->createIndexImage();
+        $database->createSubIndexImage();
+        $database->createTageLine();
+        $database->createAbout();
+        $database->createWhyus();
+        $database->createPeople();
+    }
     public function createLogin(){
         $database = new Database();
         $database->createLoginTable();

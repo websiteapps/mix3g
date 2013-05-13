@@ -144,14 +144,7 @@
             </div>
         </div>
 
-        <!-- REMOTE THIS TRACKING CODE  -->
-        <div style="DISPLAY: none">
-        <br>
-        <script language="JavaScript" src="http://www.counter160.com/js.js?img=15"></script><br>
-        <a href="http://www.000webhost.com"><img src="http://www.counter160.com/images/15/left.png" alt="Free web hosting" border="0" align="texttop"></a>
-        <a href="http://www.hosting24.com"><img alt="Web hosting" src="http://www.counter160.com/images/15/right.png" border="0" align="texttop"></a>
-        </div>
-        <!-- REMOTE THIS TRACKING CODE  -->
+
 
 
     </footer>
@@ -170,5 +163,11 @@
 			});
 		});
     </script>
+    <!-- REMOTE THIS TRACKING CODE  -->
+    <br>
+    <script language="JavaScript" src="http://www.counter160.com/js.js?img=15"></script><br>
+    <a href="http://www.000webhost.com"><img src="http://www.counter160.com/images/15/left.png" alt="Free web hosting" border="0" align="texttop"></a>
+    <a href="http://www.hosting24.com"><img alt="Web hosting" src="http://www.counter160.com/images/15/right.png" border="0" align="texttop"></a>
+    <!-- REMOTE THIS TRACKING CODE  -->
 </body>
 </html>

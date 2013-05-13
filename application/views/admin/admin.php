@@ -221,9 +221,8 @@
                     <div style="padding:10px 10px 10px 10px;float:left;width:570px;">
                         <p>
                             <?php
-                            foreach($about as $info){
-                                echo $info->about;
-                                break;
+                            foreach($whyUs as $item){
+                                echo "<li><a>$item->whyUs</a></li>";
                             }
                             ?>
                         </p>

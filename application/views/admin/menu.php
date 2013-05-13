@@ -214,6 +214,7 @@
                             <div style="padding:10px 10px 10px 10px;>
                                 <?php echo form_open_multipart('admin/deleteMenu');?>
                                 <div style="width:500px;">
+                            <?php echo form_open_multipart('admin/deleteMenu');?>
                                 <p>
                                     <select id="delete_menuType" class="{validate:{required:true}}" placeholder="MenuType" name="delete_menuType" onchange = "showMenu()">
                                         <option value='REGULAR_MENU'>Regular Menu</option>
