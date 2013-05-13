@@ -65,7 +65,7 @@
           </a>
         </li>
 		<li>
-          <a href="people.html">
+          <a href="<?php echo site_url("adminPanel/people")?>">
             <span class="icon32 user"></span>
             People
           </a>

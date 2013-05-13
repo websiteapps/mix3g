@@ -100,7 +100,7 @@
           </a>
         </li>
 		<li>
-          <a href="people.html">
+          <a href="<?php echo site_url("adminPanel/people")?>">
             <span class="icon32 user"></span>
             People
           </a>
@@ -155,7 +155,7 @@
                                       <input type="file" id="menuPicture" name="menuPicture" placeholder="Menu Picture"/>
                                   </p>
                                   <p id="show_secialMenuDesc" style="DISPLAY: none;">
-                                      <textarea id="textarea" name="spl_desc" class="{validate:{required:true}}" name="textarea"></textarea>
+                                      <textarea id="textarea" name="spl_desc" class="{validate:{required:true}}"></textarea>
                                   </p>
                                   <input type="submit" class="button blue" value="Save"/>
                                   </form>
@@ -241,8 +241,8 @@
                                             echo "<p>";
                                             echo "<input type='checkbox' name='MENU_OPT[]' id='".$menu->id."' value='".$menu->id."'/>";
                                             print "<label for=".$menu->id.">";
-                                            echo "<img width='150px' height='100px' src='".img_url($menu->img)."'/>";
-                                            echo "<h6>".str_repeat('&nbsp;', 7)."$menu->menuName</h6>";
+                                            echo "<img style='vertical-align:middle' width='150px' height='100px' src='".img_url($menu->img)."'/>";
+                                            echo str_repeat('&nbsp;', 7)."$menu->menuName";
                                             echo "</label>";
                                             echo "<p>";
                                         }

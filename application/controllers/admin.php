@@ -185,6 +185,37 @@ class admin extends CI_Controller {
         }
         redirect('adminPanel/menu','refresh');
     }
+
+    public function addPeople(){
+        $people = new People();
+        $people->setName($this->input->post('peopleName'));
+        $people->setDesignation($this->input->post('designation'));
+        $people->setDesc($this->input->post('peopleDesc'));
+
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'jpg';
+        $config['max_size']	= '1000';
+        $config['max_width']  = '1024';
+        $config['max_height']  = '768';
+        $config['file_name'] = $people->getImg();
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload("peoplePicture")){
+            $utility = new Utilities();
+            $utility->addPeople($people);
+        }
+        redirect('adminPanel/people','refresh');
+    }
+
+    public function deletePeople(){
+        foreach($this->input->post('people') as $id){
+            $sql = "DELETE FROM people WHERE id = '".$id."'";
+            $this->db->query($sql);
+        }
+        redirect('adminPanel/people','refresh');
+    }
+
+
     public function sendEmail(){
         $name = $this->input->post("name");
         $email = $this->input->post("email");

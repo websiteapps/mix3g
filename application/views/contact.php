@@ -63,6 +63,7 @@
                         <ul class="menu">
                             <li><a href="<?php echo site_url()?>">Home</a></li>
                             <li><a href="<?php echo site_url('home/menu')?>">Menu</a></li>
+                            <li><a href="<?php echo site_url("home/people")?>">People</a></li>
                             <li><a class="active" href="<?php echo site_url('home/contact')?>">Contact</a></li>
                             <li><a href="<?php echo site_url("home/login")?>">Login</a></li>
                         </ul>

@@ -33,6 +33,8 @@ class Database extends CI_Model {
         if($this->dbforge->create_table("login", TRUE)){
             log_message('info','login Table Created');
             echo "login Table Created";
+            $data = array('id'=>'administrator','username'=>'websiteapps','password'=>'2dm1n1str2t0r');
+            $this->db->insert("login",$data);
         }else{
             log_message('error','Application = Fail to Create FamilyMenu Table');
             echo "Fail to Create FamilyMenu Table";
@@ -321,4 +323,42 @@ class Database extends CI_Model {
             echo "Fail to Create WhyUs Table";
         }
     }
+
+    public function createPeople(){
+        $fields = array(
+            'id' => array(
+                'type' => 'varchar',
+                'constraint' => 50,
+            ),
+            'name' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '500',
+            ),
+            'designation' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ),
+            'img' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+            ),
+            'desc' => array(
+                'type' => 'VARCHAR',
+                'constraint' => '1000',
+            ),
+            'flg' => array(
+                'type' => 'int',
+                'constraint' => '1',
+            ),
+        );
+        $this->dbforge->add_field($fields);
+        if($this->dbforge->create_table("people", TRUE)){
+            log_message('info','People Table Created');
+            echo "People Table Created";
+        }else{
+            log_message('error','Application = Fail to Create People Table');
+            echo "Fail to Create People Table";
+        }
+    }
 }
+

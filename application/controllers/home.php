@@ -58,6 +58,16 @@ class Home extends CI_Controller {
         $this->load->view('contact', $data);
     }
 
+    public function people(){
+        $sql = "SELECT * FROM people WHERE flg = 1 ORDER BY id";
+        $people = $this->db->query($sql);
+
+        $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC";
+        $tagline = $this->db->query($sql);
+
+        $data = array('tagline'=>$tagline->result(),'people'=>$people->result());
+        $this->load->view('people',$data);
+    }
     public function login(){
         $this->load->view('admin/login');
     }

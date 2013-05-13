@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-    <title>DashBord</title>
-
+      <title>People</title>
       <!-- Stylesheets -->
       <link rel="stylesheet" href="<?php echo asset_url("admin/css/reset.css")?>" />
       <link rel="stylesheet" href="<?php echo asset_url("admin/css/icons.css")?>" />
@@ -42,51 +40,49 @@
       <script src="<?php echo asset_url("admin/js/jquery.livequery.js")?>"></script>
       <script src="<?php echo asset_url("admin/js/jquery.flot.min.js")?>"></script>
       <script src="<?php echo asset_url("admin/js/application.js")?>"></script>
-      <script src="<?php echo asset_url("admin/javascript/oocharts.js")?>"></script>
-      <script src="<?php echo asset_url("admin/javascript/build.js")?>"></script>
   </head>
   
-  <body onLoad="buildChart()">
+  <body>
     <!-- Primary navigation -->
     <nav id="primary">
-      <ul>
-          <li class="active">
-              <a>
-                  <span class="icon32 dashboard"></span>
-                  Dashboard
-              </a>
-          </li>
-          <li>
-              <a href="<?php echo site_url("adminPanel/admin")?>">
-                  <span class="icon32 home"></span>
-                  Home
-              </a>
-          </li>
-          <li>
-              <a href="<?php echo site_url("adminPanel/menu")?>">
-                  <span class="icon32 listicon"></span>
-                  Menu
-              </a>
-          </li>
-          <li>
-              <a href="<?php echo site_url("adminPanel/people")?>">
-                  <span class="icon32 user"></span>
-                  People
-              </a>
-          </li>
-          <li>
-              <a href="<?php echo site_url("adminPanel/contact")?>">
-                  <span class="icon32 new"></span>
-                  Contact
-              </a>
-          </li>
-          <li class="bottom">
-              <a href="<?php echo site_url('adminPanel/logout') ?>">
-                  <span class="icon32 quit"></span>
-                  Log out
-              </a>
-          </li>
-      </ul>
+        <ul>
+            <li>
+                <a href="<?php echo site_url("adminPanel/dashbord") ?>">
+                    <span class="icon32 dashboard"></span>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo site_url("adminPanel/admin")?>">
+                    <span class="icon32 home"></span>
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo site_url("adminPanel/menu")?>">
+                    <span class="icon32 listicon"></span>
+                    Menu
+                </a>
+            </li>
+            <li class="active">
+                <a href="">
+                    <span class="icon32 user"></span>
+                    People
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo site_url("adminPanel/contact")?>">
+                    <span class="icon32 new"></span>
+                    Contact
+                </a>
+            </li>
+            <li class="bottom">
+                <a href="<?php echo site_url('adminPanel/logout') ?>">
+                    <span class="icon32 quit"></span>
+                    Log out
+                </a>
+            </li>
+        </ul>
     </nav>
     <section id="maincontainer">
         <div id="main" class="container_12">
@@ -94,50 +90,48 @@
                 <div class="column-left">
                     <div class="box">
                         <div class="box-header">
-                            <span class="icon16 cog"></span><h1>Weeks Report</h1>
+                            <span class="icon16 cog"></span><h1>Add People</h1>
                         </div>
-                        <div id="timeline" style="padding:10px 10px 10px 10px;height:300px;">
+                        <div style="padding:10px 10px 10px 10px">
+                            <?php echo form_open_multipart('admin/addPeople');?>
+                            <p>
+                                <input type="text" id="peopleName" placeholder=" Name" name="peopleName"/>
+                            </p>
+                            <p>
+                                <input type="text" id="designation" placeholder="Designation" name="designation"/>
+                            </p>
+                            <p>
+                                <input type="file" id="peoplePicture" name="peoplePicture" placeholder="Picture"/>
+                            </p>
+                            <p>
+                                <textarea id="textarea" name="peopleDesc"></textarea>
+                            </p>
+                            <input type="submit" class="button blue" value="Save"/>
+                            </form>
                         </div>
                     </div>
+                    <div class="clear"></div>
                 </div>
                 <div class="column-right">
                     <div class="box">
                         <div class="box-header">
-                            <span class="icon16 cog"></span><h1>Visitor Report</h1>
+                            <span class="icon16 cog"></span><h1>Delete People</h1>
                         </div>
-                        <div id="pie" style="padding:10px 10px 10px 10px;height:300px;">
+                        <div style="padding:10px 10px 10px 10px">
+                            <?php
+                            echo form_open_multipart('admin/deletePeople');
 
+                                foreach($people as $emp){
+                                    echo "<p>";
+                                    echo "<input type='checkbox' name='people[]' id='".$emp->id."' value='".$emp->id."' />";
+                                    echo "<label for='".$emp->id."'>$emp->name &nbsp; &nbsp;====&nbsp; &nbsp; $emp->designation</label>";
+                                    echo "</p>";
+                                }
+                            ?>
+                            <input type="submit" class="button blue" value="Delete"/>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="box-content">
-                <div class="column-left">
-                    <div class="box">
-                        <div class="box-header">
-                            <span class="icon16 cog"></span><h1>Statistics</h1>
-                        </div>
-                        <div style="padding:10px 10px 10px 10px;height:100px;">
-                            <table>
-                                <tr><th>Visitors</th><th>PageViews</th><th>Bounces</th></tr>
-                                <tr>
-                                    <td><h1 align="center" id="data1"></h1></td>
-                                    <td><h1 align="center" id="data2"></h1></td>
-                                    <td><h1 align="center" id="data3"></h1></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="column-right">
-                    <div class="box">
-                        <div class="box-header">
-                            <span class="icon16 cog"></span><h1>Location Report</h1>
-                        </div>
-                        <div id="table" style="padding: 10px 10px 10px 10px;float:left;width:550px;"></div>
-                        <div class="clear"></div>
-                    </div>
+                    <div class="clear"></div>
                 </div>
             </div>
         </div>

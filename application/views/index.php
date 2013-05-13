@@ -27,6 +27,7 @@
 	<![endif]-->
 </head>
 <body id="page1">
+
 	<!--==============================header=================================-->
     <header>
     	<div class="row-top">
@@ -37,6 +38,7 @@
                         <ul class="menu">
                             <li><a class="active" href="home/index">Home</a></li>
                             <li><a href="<?php echo site_url("home/menu")?>">Menu</a></li>
+                            <li><a href="<?php echo site_url("home/people")?>">People</a></li>
                             <li><a href="<?php echo site_url("home/contact")?>">Contact</a></li>
                             <li><a href="<?php echo site_url("home/login")?>">Login</a></li>
                         </ul>
@@ -141,6 +143,17 @@
                 <a rel="nofollow" class="link" target="_blank" href="http://www.websiteapps.in">WebsiteApps
             </div>
         </div>
+
+        <!-- REMOTE THIS TRACKING CODE  -->
+        <div style="DISPLAY: none">
+        <br>
+        <script language="JavaScript" src="http://www.counter160.com/js.js?img=15"></script><br>
+        <a href="http://www.000webhost.com"><img src="http://www.counter160.com/images/15/left.png" alt="Free web hosting" border="0" align="texttop"></a>
+        <a href="http://www.hosting24.com"><img alt="Web hosting" src="http://www.counter160.com/images/15/right.png" border="0" align="texttop"></a>
+        </div>
+        <!-- REMOTE THIS TRACKING CODE  -->
+
+
     </footer>
     <script type="text/javascript"> Cufon.now(); </script>
     <script type="text/javascript">

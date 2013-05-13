@@ -57,4 +57,9 @@ class schema extends CI_Controller {
         $database = new Database();
         $database->createWhyus();
     }
+
+    public function createPeople(){
+        $database = new Database();
+        $database->createPeople();
+    }
 }

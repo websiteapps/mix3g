@@ -17,7 +17,7 @@ function buildChart(){
 		tl.addMetric('ga:visitors', 'Visits');
 		tl.addMetric('ga:bounces', 'Bounces');
 		tl.setOption('colors', ['red', 'orange', 'yellow', 'green']);
-		tl.setOption('title', 'My Timeline');
+		tl.setOption('title', 'Timeline');
 		tl.draw('timeline');
 	});
 

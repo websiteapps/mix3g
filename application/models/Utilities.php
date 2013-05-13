@@ -8,6 +8,7 @@
  */
 
 class Utilities extends CI_Model {
+
     public function addContact($contact){
         log_message('info','in AddContact');
         $data = array(
@@ -120,5 +121,19 @@ class Utilities extends CI_Model {
         );
         $this->db->insert("whyUs",$data);
         log_message("info", "WhyUs Added to Database");
+    }
+
+    public function addPeople($people){
+        log_message("info","in People");
+        $data = array(
+            'id'=>$people->getId(),
+            'name'=>$people->getName(),
+            'designation'=>$people->getDesignation(),
+            'img'=>$people->getImg(),
+            'desc'=>$people->getDesc(),
+            'flg'=>$people->getFlg()
+        );
+        $this->db->insert("people",$data);
+        log_message("info", "People Added to Database");
     }
 }

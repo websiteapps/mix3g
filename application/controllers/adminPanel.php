@@ -81,7 +81,6 @@ class adminPanel extends CI_Controller {
             $sql = "SELECT * FROM menu where menuFamilyid = 'BEST_MENU' AND flg = 1";
             $bestMenu = $this->db->query($sql);
             $data = array('menuFamily'=>$menuFamily,'menu'=>$menus,'bestMenu'=>$bestMenu->result());
-//            echo json_encode($data);
             $this->load->view("admin/menu",$data);
         }
     }
@@ -92,6 +91,15 @@ class adminPanel extends CI_Controller {
             $data = $this->db->query($sql);
             $data = array('contact'=>$data->result());
             $this->load->view("admin/contact",$data);
+        }
+    }
+
+    public function people(){
+        if($this->session->userdata('logged_in')){
+            $sql = "SELECT * FROM people WHERE flg = 1 ORDER BY id desc";
+            $people = $this->db->query($sql);
+            $data = array("people"=>$people->result());
+            $this->load->view("admin/people",$data);
         }
     }
 
