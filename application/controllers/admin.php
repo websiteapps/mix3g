@@ -69,10 +69,10 @@ class admin extends CI_Controller {
                 log_message("info","Fail to Upload Special Menu Image". $special->getImg());
                 echo $this->upload->display_errors();
             }
-        }else if(strcmp($this->input->post('menuType'),"REGULAR_MENU")  != 0){
+        }else if(strcmp($this->input->post('menuType'),"REGULAR_MENU")  != 0){  //For Best Menu
             $menu = new Menu();
             $menu->setMenuType($this->input->post("menuType"));
-            $menu->setMenuFamilyId($this->input->post("menuFamilyType"));
+            $menu->setMenuFamilyId("BEST_MENU");
             $menu->setMenuName($this->input->post("menuName"));
             $menu->setMenuPrice($this->input->post("menuPrice"));
 
@@ -176,6 +176,14 @@ class admin extends CI_Controller {
         $utility = new Utilities();
         $utility->addAbout($about);
         redirect('adminPanel/admin','refresh');
+    }
+
+    public function deleteMenu(){
+        foreach($this->input->post('MENU_OPT') as $id){
+            $sql = "DELETE FROM menu WHERE id = '".$id."'";
+            $this->db->query($sql);
+        }
+        redirect('adminPanel/menu','refresh');
     }
     public function sendEmail(){
         $name = $this->input->post("name");

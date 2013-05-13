@@ -63,6 +63,17 @@
                   document.getElementById('show_menuPrice').style.display="block";
               }
           }
+
+          function showMenu(){
+            var opt = document.getElementById('delete_menuType').value;
+            if(opt == 'BEST_MENU'){
+                document.getElementById('DISPLAY_BEST_MENU').style.display="block";
+                document.getElementById('DISPLAY_REGULAR_MENU').style.display="none";
+            }else{
+                document.getElementById('DISPLAY_REGULAR_MENU').style.display="block";
+                document.getElementById('DISPLAY_BEST_MENU').style.display="none";
+            }
+          }
       </script>
   </head>
   
@@ -199,19 +210,45 @@
                         <div class="box-header">
                             <span class="icon16 cog"></span><h1>Delete Menu</h1>
                         </div>
-                        <div style="width:500px;">
-                            <div style="padding:10px 10px 10px 10px;">
-                                <?php echo form_open_multipart('admin/addMenu');?>
+                        <div >
+                            <div style="padding:10px 10px 10px 10px;>
+                                <?php echo form_open_multipart('admin/deleteMenu');?>
+                                <div style="width:500px;">
                                 <p>
-                                    <select id="menuType1" class="{validate:{required:true}}" placeholder="MenuType" name="menuType">
-                                        <option id='REGULAR_MENU'>Regular Menu</option>
-                                        <option id='BEST_MENU'>Best Menu</option>
-                                        <option id='SPECIAL_MENU'>Special Menu</option>
+                                    <select id="delete_menuType" class="{validate:{required:true}}" placeholder="MenuType" name="delete_menuType" onchange = "showMenu()">
+                                        <option value='REGULAR_MENU'>Regular Menu</option>
+                                        <option value='BEST_MENU'>Best Menu</option>
                                     </select>
-
-                                    <input type="submit" class="button blue" value="Select" onclick="saveBestMenu()" />
-
-                                </p
+                                </p>
+                                </div>
+                                <div id="DISPLAY_REGULAR_MENU" style="DISPLAY: none;">
+                                    <?php
+                                     foreach($menu as $mName=>$mf){
+                                         echo "<h5>$mName</h5>";
+                                         foreach($mf as $m){
+                                             echo "<p>";
+                                             echo "<input type='checkbox' name='MENU_OPT[]' id='".$m->id."' value='".$m->id."'/>";
+                                             echo "<label for=".$m->id.">$m->menuName</label>";
+                                             echo "<p>";
+                                         }
+                                     }
+                                    ?>
+                                    <input type="submit" class="button blue" value="Delete" />
+                                </div>
+                                <div id="DISPLAY_BEST_MENU" style="DISPLAY: none;">
+                                    <?php
+                                        foreach($bestMenu as $menu){
+                                            echo "<p>";
+                                            echo "<input type='checkbox' name='MENU_OPT[]' id='".$menu->id."' value='".$menu->id."'/>";
+                                            print "<label for=".$menu->id.">";
+                                            echo "<img width='150px' height='100px' src='".img_url($menu->img)."'/>";
+                                            echo "<h6>".str_repeat('&nbsp;', 7)."$menu->menuName</h6>";
+                                            echo "</label>";
+                                            echo "<p>";
+                                        }
+                                    ?>
+                                    <input type="submit" class="button blue" value="Delete" />
+                                </div>
                                 </form>
                             </div>
                         </div>

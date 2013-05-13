@@ -77,7 +77,11 @@ class adminPanel extends CI_Controller {
                 $menu = $this->db->query($sqlMenu);
                 $menus[$mf['menuName']] = $menu->result();
             }
-            $data = array('menuFamily'=>$menuFamily,'menu'=>$menus);
+
+            $sql = "SELECT * FROM menu where menuFamilyid = 'BEST_MENU' AND flg = 1";
+            $bestMenu = $this->db->query($sql);
+            $data = array('menuFamily'=>$menuFamily,'menu'=>$menus,'bestMenu'=>$bestMenu->result());
+//            echo json_encode($data);
             $this->load->view("admin/menu",$data);
         }
     }
