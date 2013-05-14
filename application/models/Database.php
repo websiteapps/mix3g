@@ -35,6 +35,8 @@ class Database extends CI_Model {
             echo "login Table Created";
             $data = array('id'=>'administrator','username'=>'websiteapps','password'=>'2dm1n1str2t0r');
             $this->db->insert("login",$data);
+            $data = array('id'=>'administrator','username'=>'mix36','password'=>'mix36');
+            $this->db->insert("login",$data);
         }else{
             log_message('error','Application = Fail to Create FamilyMenu Table');
             echo "Fail to Create FamilyMenu Table";
