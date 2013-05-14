@@ -35,7 +35,7 @@ class Utilities extends CI_Model {
             'menuName'=>$menuFamily->getMenuName(),
             'flg'=>$menuFamily->getFlg()
         );
-        $this->db->insert("menuFamily",$data);
+        $this->db->insert("menufamily",$data);
         log_message("info", "Contact Info Added to Database");
     }
 
@@ -74,7 +74,7 @@ class Utilities extends CI_Model {
             'imgName'=>$indexImage->getImgName(),
             'flg'=>$indexImage->getFlg()
         );
-        $this->db->insert("indexImage",$data);
+        $this->db->insert("indeximage",$data);
         log_message("info", "IndexImage Added to Database");
     }
 
@@ -85,7 +85,7 @@ class Utilities extends CI_Model {
             'imgName'=>$subIndex->getImgName(),
             'flg'=>$subIndex->getFlg()
         );
-        $this->db->insert("subIndex",$data);
+        $this->db->insert("subindex",$data);
         log_message("info", "subIndex Added to Database");
     }
 
@@ -119,7 +119,7 @@ class Utilities extends CI_Model {
             'whyUs'=>$whyUs->getwhyUs(),
             'flg'=>$whyUs->getFlg()
         );
-        $this->db->insert("whyUs",$data);
+        $this->db->insert("whyus",$data);
         log_message("info", "WhyUs Added to Database");
     }
 

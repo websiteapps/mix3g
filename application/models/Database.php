@@ -56,7 +56,7 @@ class Database extends CI_Model {
             ),
         );
         $this->dbforge->add_field($fields);
-        if($this->dbforge->create_table("menuFamily", TRUE)){
+        if($this->dbforge->create_table("menufamily", TRUE)){
             log_message('info','FamilyMenu Table Created');
             echo "FamilyMenu Table Created";
         }else{
@@ -211,7 +211,7 @@ class Database extends CI_Model {
             ),
         );
         $this->dbforge->add_field($fields);
-        if($this->dbforge->create_table("indexImage", TRUE)){
+        if($this->dbforge->create_table("indeximage", TRUE)){
             log_message('info','IndexImage Table Created');
             echo "IndexImage Table Created";
         }else{
@@ -236,7 +236,7 @@ class Database extends CI_Model {
             ),
         );
         $this->dbforge->add_field($fields);
-        if($this->dbforge->create_table("subIndex", TRUE)){
+        if($this->dbforge->create_table("subindex", TRUE)){
             log_message('info','SubIndex Table Created');
             echo "SubIndex Table Created";
         }else{
@@ -315,7 +315,7 @@ class Database extends CI_Model {
             ),
         );
         $this->dbforge->add_field($fields);
-        if($this->dbforge->create_table("whyUs", TRUE)){
+        if($this->dbforge->create_table("whyus", TRUE)){
             log_message('info','WhyUs Table Created');
             echo "WhyUs Table Created";
         }else{

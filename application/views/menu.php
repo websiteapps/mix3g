@@ -77,11 +77,14 @@
                             <h3 class="prev-indent-bot">Special Offer</h3>
                             <div class="wrapper img-indent-bot">
                                 <?php
-                                    echo "<figure class='img-indent'><img width='210' height='125' src=". img_url($special[0]->img) ." alt=''></figure>";
-                                    echo "<div class='extra-wrap'>";
-                                    echo "<h5>".$special[0]->specialName." </h5>";
-                                    echo $special[0]->specialDesc;
-                                    echo "</div>";
+                                    foreach($special as $spl){
+                                        echo "<figure class='img-indent'><img width='210' height='125' src=". img_url($spl->img) ." alt=''></figure>";
+                                        echo "<div class='extra-wrap'>";
+                                        echo "<h5>".$spl->specialName." </h5>";
+                                        echo $spl->specialDesc;
+                                        echo "</div>";
+                                        break;
+                                    }
                                 ?>
                             </div>
                             <a class="button-1" href="#">Read More</a>
