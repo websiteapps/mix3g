@@ -40,16 +40,16 @@ class adminPanel extends CI_Controller {
     public function admin(){
         if($this->session->userdata('logged_in'))
         {
-            $sql = "SELECT * FROM indeximage where flg=1 ORDER BY id desc";
+            $sql = "SELECT * FROM indeximage where flg=1 ORDER BY id desc LIMIT 3";
             $indexImage = $this->db->query($sql);
 
-            $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC";
+            $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC LIMIT 1";
             $tagline = $this->db->query($sql);
 
-            $sql = "SELECT * FROM about where flg=1 ORDER BY id DESC";
+            $sql = "SELECT * FROM about where flg=1 ORDER BY id DESC LIMIT 1";
             $about = $this->db->query($sql);
 
-            $sql = "SELECT * FROM subindex WHERE flg = 1 ORDER BY id DESC";
+            $sql = "SELECT * FROM subindex WHERE flg = 1 ORDER BY id DESC LIMIT 3";
             $subIndex = $this->db->query($sql);
 
             $sql = "SELECT * FROM whyus WHERE flg = 1 ORDER BY id DESC";
@@ -90,7 +90,7 @@ class adminPanel extends CI_Controller {
 
     public function contact(){
         if($this->session->userdata('logged_in')){
-            $sql = "SELECT * FROM contact Order by id desc";
+            $sql = "SELECT * FROM contact Order by id desc LIMIT 1";
             $data = $this->db->query($sql);
             $data = array('contact'=>$data->result());
             $this->load->view("admin/contact",$data);

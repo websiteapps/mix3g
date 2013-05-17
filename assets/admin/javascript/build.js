@@ -1,6 +1,10 @@
 function buildChart(){
 	var id = "aa29e7e2175b4e369f76109407385604";
 	var gId = "72222103";
+    var today = new Date();
+    var millisecondsIn20Days = 30 * 24 * 60 * 60 * 1000;
+    var thirtyDaysAgo = new Date(today - millisecondsIn20Days);
+
 	oo.setOOId(id);
 	oo.load(function()
 	{
@@ -13,11 +17,10 @@ function buildChart(){
 	oo.setOOId(id);
 	oo.load(function()
 	{
-		var tl = new oo.Timeline(gId, new Date("04/08/2013"), new Date());
+		var tl = new oo.Timeline(gId, thirtyDaysAgo, new Date());
 		tl.addMetric('ga:visitors', 'Visits');
 		tl.addMetric('ga:bounces', 'Bounces');
 		tl.setOption('colors', ['red', 'orange', 'yellow', 'green']);
-		tl.setOption('title', 'Timeline');
 		tl.draw('timeline');
 	});
 

@@ -4,16 +4,16 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-        $sql = "SELECT * FROM indeximage where flg=1 ORDER BY id DESC";
+        $sql = "SELECT * FROM indeximage where flg=1 ORDER BY id DESC LIMIT 3";
         $indexImage = $this->db->query($sql);
 
-        $sql = "SELECT * FROM tagline where flg=1 ORDER BY id DESC";
+        $sql = "SELECT * FROM tagline where flg=1 ORDER BY id DESC LIMIT 1";
         $tagline = $this->db->query($sql);
 
-        $sql = "SELECT * FROM about where flg=1 ORDER BY id DESC";
+        $sql = "SELECT * FROM about where flg=1 ORDER BY id DESC LIMIT 1";
         $about = $this->db->query($sql);
 
-        $sql = "SELECT * FROM subindex WHERE flg = 1 ORDER BY id DESC";
+        $sql = "SELECT * FROM subindex WHERE flg = 1 ORDER BY id DESC LIMIT 3";
         $subIndex = $this->db->query($sql);
 
         $sql = "SELECT * FROM whyus WHERE flg = 1 ORDER BY id DESC";
@@ -40,7 +40,7 @@ class Home extends CI_Controller {
         $special = "SELECT* FROM special where flg = 1 ORDER BY id DESC";
         $special = $this->db->query($special);
 
-        $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC";
+        $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC LIMIT 1";
         $tagline = $this->db->query($sql);
 
         $data = array('menu'=>$menus,'bestMenu'=>$bestMenuSql->result(),'special'=>$special->result(),'tagline'=>$tagline->result());
@@ -48,10 +48,10 @@ class Home extends CI_Controller {
     }
 
     public function contact(){
-        $sql = "SELECT * FROM contact Order by id desc";
+        $sql = "SELECT * FROM contact Order by id desc LIMIT 1";
         $contact = $this->db->query($sql);
 
-        $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC";
+        $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC LIMIT 1";
         $tagline = $this->db->query($sql);
 
         $data = array('tagline'=>$tagline->result(),'contact'=>$contact->result());
@@ -62,7 +62,7 @@ class Home extends CI_Controller {
         $sql = "SELECT * FROM people WHERE flg = 1 ORDER BY id";
         $people = $this->db->query($sql);
 
-        $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC";
+        $sql = "SELECT * FROM tagline where flg=1 ORDER BY ID DESC LIMIT 1";
         $tagline = $this->db->query($sql);
 
         $data = array('tagline'=>$tagline->result(),'people'=>$people->result());

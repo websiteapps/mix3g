@@ -67,7 +67,8 @@ class admin extends CI_Controller {
                 redirect('adminPanel/menu', 'refresh');
             }else{
                 log_message("info","Fail to Upload Special Menu Image". $special->getImg());
-                echo $this->upload->display_errors();
+                $data = array("error"=>$this->upload->display_errors());
+                $this->load->view("admin/error",$data);
             }
         }else if(strcmp($this->input->post('menuType'),"REGULAR_MENU")  != 0){  //For Best Menu
             $menu = new Menu();
@@ -91,7 +92,8 @@ class admin extends CI_Controller {
                 redirect('adminPanel/menu', 'refresh');
             }else{
                 log_message("info","Fail to Upload Best Menu Image". $menu->getImg());
-                echo $this->upload->display_errors();
+                $data = array("error"=>$this->upload->display_errors());
+                $this->load->view("admin/error",$data);
             }
         }
         else{
@@ -125,7 +127,8 @@ class admin extends CI_Controller {
             redirect('adminPanel/admin', 'refresh');
         }else{
             log_message("info","Fail to Upload Index Image". $indexImage->getImgName());
-            echo $this->upload->display_errors();
+            $data = array("error"=>$this->upload->display_errors());
+            $this->load->view("admin/error",$data);
         }
     }
 
@@ -146,7 +149,8 @@ class admin extends CI_Controller {
             redirect('adminPanel/admin', 'refresh');
         }else{
             log_message("info","Fail to Upload Index Image". $subIndex->getImgName());
-            echo $this->upload->display_errors();
+            $data = array("error"=>$this->upload->display_errors());
+            $this->load->view("admin/error",$data);
         }
     }
 
@@ -203,8 +207,12 @@ class admin extends CI_Controller {
         if ($this->upload->do_upload("peoplePicture")){
             $utility = new Utilities();
             $utility->addPeople($people);
+            redirect('adminPanel/people','refresh');
+        }else{
+            $data = array("error"=>$this->upload->display_errors());
+//            echo json_encode($data);
+            $this->load->view("admin/error",$data);
         }
-        redirect('adminPanel/people','refresh');
     }
 
     public function deletePeople(){
@@ -213,6 +221,14 @@ class admin extends CI_Controller {
             $this->db->query($sql);
         }
         redirect('adminPanel/people','refresh');
+    }
+
+    public function deleteWhyUs(){
+        foreach($this->input->post('whyUs') as $id){
+            $sql = "DELETE FROM whyus WHERE id = '".$id."'";
+            $this->db->query($sql);
+        }
+        redirect('adminPanel/admin','refresh');
     }
 
 

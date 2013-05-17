@@ -109,7 +109,7 @@
                                 }
                                 $count++;
                                 echo "<div style='float:left;padding-right: 20px;padding-left: 20px;'>";
-                                echo "<img height='100' widht='150' src=".img_url($img->imgName) ." alt='' />";
+                                echo "<img height='100' widht='150' src=".img_url($img->imgName)." alt='' />";
                                 echo "</div>";
                             }
                         ?>
@@ -220,13 +220,17 @@
                         </form>
                     </div>
                     <div style="padding:10px 10px 10px 10px;float:left;width:570px;">
-                        <p>
-                            <?php
-                            foreach($whyUs as $item){
-                                echo "<li><a>$item->whyUs</a></li>";
-                            }
+                           <?php
+                                echo form_open_multipart('admin/deleteWhyUs');
+                                foreach($whyUs as $item){
+                                    echo "<p>";
+                                    echo "<input type='checkbox' name='whyUs[]' id='".$item->id."' value='".$item->id."' />";
+                                    echo "<label for='".$item->id."'>$item->whyUs</label>";
+                                    echo "</p>";
+                                }
                             ?>
-                        </p>
+                            <input type="submit" class="button blue" value="Delete"/>
+                        </form>
                     </div>
                 </div>
                 <div class="clear"></div>

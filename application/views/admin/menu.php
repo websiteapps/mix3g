@@ -77,7 +77,7 @@
       </script>
   </head>
   
-  <body>
+  <body onload="showImageUpload()">
     <!-- Primary navigation -->
     <nav id="primary">
       <ul>
