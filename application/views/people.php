@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>People</title>
+    <title>People | Mix36</title>
     <link rel="stylesheet" href="<?php echo asset_url("css/reset.css") ?>" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo asset_url("css/style.css") ?>" type="text/css" media="screen">
     <link rel="stylesheet" href="<?php echo asset_url("css/layout.css") ?>" type="text/css" media="screen">
@@ -75,7 +75,7 @@
     <footer>
         <div class="main">
             <div class="aligncenter">
-                <span>Mix3G.com &copy; 2012</span>
+                <span>Mix36.com &copy; 2012</span>
                 <span>Developed by</span>
                 <a rel="nofollow" class="link" target="_blank" href="http://www.websiteapps.in">WebsiteApps
             </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Mix3g Admin Login</title>
+<title>Admin Login | Mix36 </title>
 <style>
 /* Reset CSS */
 html, body, div, span, applet, object, iframe,
@@ -281,6 +281,7 @@ form:after {
 				<input type="submit" value="Log in" />
 			</div>
 		<?php echo form_close(); ?>
+        <span><h5><?php if(isset($error)){echo $error;} ?></h5></span>
 		<div class="button">
             <h6>Developed by WebsiteApps <br> www.websiteapps.in</h6>
 		</div><!-- button -->

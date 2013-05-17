@@ -210,7 +210,6 @@ class admin extends CI_Controller {
             redirect('adminPanel/people','refresh');
         }else{
             $data = array("error"=>$this->upload->display_errors());
-//            echo json_encode($data);
             $this->load->view("admin/error",$data);
         }
     }

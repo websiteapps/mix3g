@@ -6,15 +6,15 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/a.dummy" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368779006706" ignored="false" />
     <file path="/home.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368784973840" ignored="false" />
-    <file path="/index.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368454387215" ignored="false" />
-    <file path="/menu.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368788239115" ignored="false" />
+    <file path="/index.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368792562055" ignored="false" />
+    <file path="/menu.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368792577344" ignored="false" />
     <file path="/Menu.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1367741208977" ignored="false" />
     <file path="/BestMenu.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1367677544237" ignored="false" />
     <file path="/Contact.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1367334696508" ignored="false" />
     <file path="/admin.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368790951840" ignored="false" />
     <file path="/Database.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368454011259" ignored="false" />
     <file path="/log4php.properties" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1367330136173" ignored="false" />
-    <file path="/contact.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368339082282" ignored="false" />
+    <file path="/contact.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368792600438" ignored="false" />
     <file path="/MenuFamily.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1367393055924" ignored="false" />
     <file path="/database.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1367390961146" ignored="false" />
     <file path="/databaseController.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1367390223880" ignored="false" />
@@ -22,8 +22,8 @@
     <file path="/autoload.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368006424032" ignored="false" />
     <file path="/schema.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368460355051" ignored="false" />
     <file path="/.htaccess" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1367643931986" ignored="false" />
-    <file path="/login.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1367653043178" ignored="false" />
-    <file path="/adminPanel.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368538118689" ignored="false" />
+    <file path="/login.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368793130371" ignored="false" />
+    <file path="/adminPanel.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368793052667" ignored="false" />
     <file path="$PROJECT_DIR$/../CodeIgniter/application/controllers/home.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1367658736680" ignored="false" />
     <file path="$PROJECT_DIR$/../CodeIgniter/application/controllers/login.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1367658709354" ignored="false" />
     <file path="/config.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1367661321878" ignored="false" />
@@ -36,7 +36,7 @@
     <file path="/WhyUs.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368337232892" ignored="false" />
     <file path="/dashbord.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368343840496" ignored="false" />
     <file path="/build.js" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368787877462" ignored="false" />
-    <file path="/people.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368456727473" ignored="false" />
+    <file path="/people.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368792587107" ignored="false" />
     <file path="/People.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368451244040" ignored="false" />
     <file path="/Requests.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368779866138" ignored="false" />
     <file path="/error.php" changelist="80a09191-febc-446c-8244-af1cb3a71453" time="1368791221461" ignored="false" />
@@ -59,14 +59,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/admin.php">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="96" selection-start="5448" selection-end="5448" vertical-scroll-proportion="0.7816092">
+            <state line="3" column="23" selection-start="63" selection-end="63" vertical-scroll-proportion="19.73077">
               <folding>
-                <marker date="1368791369014" expanded="true" signature="5297:5347" placeholder="..." />
-                <marker date="1368791369014" expanded="true" signature="6815:6865" placeholder="..." />
+                <marker date="1368792564984" expanded="false" signature="1338:1390" placeholder="..." />
+                <marker date="1368792564984" expanded="true" signature="1391:1780" placeholder="..." />
+                <marker date="1368792564984" expanded="true" signature="1510:1769" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminPanel.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/adminPanel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="32" selection-start="1175" selection-end="1175" vertical-scroll-proportion="-2.4230769">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/admin/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="283" column="41" selection-start="10271" selection-end="10271" vertical-scroll-proportion="0.6504673">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,7 +93,7 @@
       <file leaf-file-name="admin.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="213" column="51" selection-start="8334" selection-end="8385" vertical-scroll-proportion="-10.538462">
+            <state line="212" column="0" selection-start="8295" selection-end="8295" vertical-scroll-proportion="-128.73077">
               <folding />
             </state>
           </provider>
@@ -90,22 +109,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/contact.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/people.php" />
-        <option value="$PROJECT_DIR$/application/views/people.php" />
-        <option value="$PROJECT_DIR$/application/views/index.php" />
         <option value="$PROJECT_DIR$/application/controllers/schema.php" />
         <option value="$PROJECT_DIR$/application/models/Utilities.php" />
-        <option value="$PROJECT_DIR$/application/views/menu.php" />
         <option value="$PROJECT_DIR$/application/models/Database.php" />
         <option value="$PROJECT_DIR$/application/libraries/Requests.php" />
         <option value="$PROJECT_DIR$/application/controllers/home.php" />
-        <option value="$PROJECT_DIR$/application/controllers/adminPanel.php" />
         <option value="$PROJECT_DIR$/application/views/admin/menu.php" />
         <option value="$PROJECT_DIR$/assets/admin/javascript/build.js" />
-        <option value="$PROJECT_DIR$/application/controllers/admin.php" />
         <option value="$PROJECT_DIR$/application/views/admin/error.php" />
         <option value="$PROJECT_DIR$/application/views/admin/admin.php" />
+        <option value="$PROJECT_DIR$/application/controllers/admin.php" />
+        <option value="$PROJECT_DIR$/application/views/index.php" />
+        <option value="$PROJECT_DIR$/application/views/menu.php" />
+        <option value="$PROJECT_DIR$/application/views/people.php" />
+        <option value="$PROJECT_DIR$/application/views/contact.php" />
+        <option value="$PROJECT_DIR$/application/controllers/adminPanel.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/login.php" />
       </list>
     </option>
   </component>
@@ -395,39 +414,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/people.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="14" selection-start="3640" selection-end="3640" vertical-scroll-proportion="0.79626167" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="33" selection-start="5551" selection-end="5551" vertical-scroll-proportion="-0.65384614" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Contact.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="32" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0317757" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/schema.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="34" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0317757" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Utilities.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="121" column="31" selection-start="4021" selection-end="4021" vertical-scroll-proportion="0.26915887" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="18" selection-start="4246" selection-end="4246" vertical-scroll-proportion="0.03256705" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/libraries/Requests.php">
@@ -449,13 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/adminPanel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="9" selection-start="3869" selection-end="3869" vertical-scroll-proportion="3.224138">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/admin/javascript/build.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="0" selection-start="698" selection-end="698" vertical-scroll-proportion="0.6969697">
@@ -466,13 +448,6 @@
     <entry file="file://$PROJECT_DIR$/application/views/admin/people.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="121" column="75" selection-start="6232" selection-end="6280" vertical-scroll-proportion="0.42803738">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="213" column="51" selection-start="8334" selection-end="8385" vertical-scroll-proportion="-10.538462">
           <folding />
         </state>
       </provider>
@@ -490,9 +465,81 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="111" column="96" selection-start="5448" selection-end="5448" vertical-scroll-proportion="0.7816092">
           <folding>
-            <marker date="1368791369014" expanded="true" signature="5297:5347" placeholder="..." />
-            <marker date="1368791369014" expanded="true" signature="6815:6865" placeholder="..." />
+            <marker date="1368791369014" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1368791369014" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/welcome_message.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/contact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="26" selection-start="66" selection-end="66" vertical-scroll-proportion="0.09770115">
+          <folding>
+            <marker date="1368792601957" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1368792601957" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1368792601957" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/people.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="25" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0953271">
+          <folding>
+            <marker date="1368792588996" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1368792588996" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1368792588996" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="23" selection-start="63" selection-end="63" vertical-scroll-proportion="0.09770115">
+          <folding>
+            <marker date="1368792578762" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1368792578762" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1368792578762" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="23" selection-start="63" selection-end="63" vertical-scroll-proportion="19.73077">
+          <folding>
+            <marker date="1368792564984" expanded="false" signature="1338:1390" placeholder="..." />
+            <marker date="1368792564984" expanded="true" signature="1391:1780" placeholder="..." />
+            <marker date="1368792564984" expanded="true" signature="1510:1769" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="212" column="0" selection-start="8295" selection-end="8295" vertical-scroll-proportion="-128.73077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/adminPanel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="32" selection-start="1175" selection-end="1175" vertical-scroll-proportion="-2.4230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="283" column="41" selection-start="10271" selection-end="10271" vertical-scroll-proportion="0.6504673">
+          <folding />
         </state>
       </provider>
     </entry>

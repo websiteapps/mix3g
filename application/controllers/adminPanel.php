@@ -30,10 +30,9 @@ class adminPanel extends CI_Controller {
                }
            }
            else{
-               echo "Invalid Login..!";
-               echo $this->input->post("username");
-               echo "<br>";
-               echo $this->input->post("username");
+               $error_message = "Invalid Login. Please check Username and Password";
+               $data = array("error"=>$error_message);
+               $this->load->view("admin/login",$data);
            }
     }
 
