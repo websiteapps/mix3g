@@ -40,7 +40,7 @@
             	<div class="main">
                     <?php
                     foreach($tagline as $tag){
-                        echo "<h2>".$tag->tagline1."<span> ".$tag->tagline2."</span></h2>";
+                        echo "<h2>".$tag->tagline1."<span>".$tag->tagline2."</span></h2>";
                         break;
                     }
                     ?>
