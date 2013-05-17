@@ -84,7 +84,7 @@
         <div class="main">
             <div class="wrapper img-indent-bot">
                 <?php
-                $count = 1;
+                $count = 0;
                 foreach($subIndex as $img){
                     if($count > 3){
                         break;
@@ -96,7 +96,7 @@
                     }else{
                         echo "<article class='col-1'>";
                     }
-                    echo "<a href=''><img height='170px' width='300px' class='img-border' src=".img_url($img->imgName)." alt=''></a><img src= alt='' />";
+                    echo "<a href=''><img height='160px' width='290px' class='img-border' src=".img_url($img->imgName)." alt=''></a>";
                     echo "</article>";
                 }
                 ?>
