@@ -71,6 +71,19 @@ class Home extends CI_Controller {
     public function login(){
         $this->load->view('admin/login');
     }
+
+    public function facebook(){
+        $app_id = "120788068117691";
+        $app_secret = "2575ff3013943aa1d12090d94d732fca";
+        $pageUrl = "https://graph.facebook.com/StyloGentsSaloon";
+        $accessTokan = $app_id."|".$app_secret;
+
+        $this->load->library('Requests');
+        $this->requests->register_autoloader();
+        $response = $this->requests->get($pageUrl ."/posts?access_token=" . $accessTokan, array('Accept' => 'application/json'));
+        $json = json_decode($response->body, true);
+        echo json_encode($json);
+    }
 }
 
 /* End of file home.php */

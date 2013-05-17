@@ -128,6 +128,7 @@
                             <input type="file" id="subIndexPicture" name="subIndexPicture" placeholder=" Sub-Index picture" />
                         </p>
                         <input type="submit" class="button blue" value="Save"/>
+                        <span>Note : Image Should be of 290 X 149 for Best Results </span>
                         </form>
                     </div>
                     <div style="padding:10px 10px 10px 10px;float:right;">
