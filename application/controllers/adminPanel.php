@@ -26,7 +26,7 @@ class adminPanel extends CI_Controller {
                }
                if($this->session->userdata('logged_in'))
                {
-                  $this->dashbord();
+                  redirect('adminPanel/dashbord','refresh');
                }
            }
            else{
